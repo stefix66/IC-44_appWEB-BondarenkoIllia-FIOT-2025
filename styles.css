@@ -1,5 +1,3 @@
-
-
 /* ========= Основні налаштування ========= */
 * {
   box-sizing: border-box;
@@ -7,8 +5,9 @@
   padding: 0;
 }
 
+/* Виправлено дублювання body та шрифтів */
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', 'Montserrat', sans-serif;
   background-color: #fffaf5;
   color: #2e2e2e;
   line-height: 1.6;
@@ -81,6 +80,7 @@ body {
   background: linear-gradient(rgba(255,111,60,0.25), rgba(255,111,60,0.15)), url("pizza-bg.jpg") center/cover no-repeat;
   color: #fff;
   border-radius: 0 0 40px 40px;
+  position: relative; /* Додано для коректного позиціонування .hero-text */
 }
 
 .hero h2 {
@@ -222,36 +222,88 @@ body {
   gap: 18px;
 }
 
+/* Об'єднано стилі для input, textarea, select */
 .order-section input,
-.order-section textarea {
-  padding: 12px;
-  border: 1px solid #ff6f3c;
+.order-section textarea,
+.order-section select {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0 20px 0;
   border-radius: 10px;
+  border: 1px solid #ccc;
+  font-family: 'Poppins', sans-serif;
   font-size: 1rem;
-  outline: none;
-  transition: border 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .order-section input:focus,
-.order-section textarea:focus {
-  border-color: #d93800;
+.order-section textarea:focus,
+.order-section select:focus {
+  outline: none;
+  border: 2px solid #FF4500;
+  box-shadow: 0 0 8px rgba(255, 69, 0, 0.4);
 }
 
-.order-section button {
-  background-color: #ff6f3c;
+/* Кнопка надсилання */
+.order-section button,
+.order-section .btn {
+  background: linear-gradient(90deg, #a8e063, #56ab2f, #2e7d32);
   color: #fff;
-  border: none;
-  padding: 15px;
+  padding: 12px 25px;
   font-size: 1.1rem;
   border-radius: 10px;
+  border: none;
   cursor: pointer;
   font-weight: 600;
   transition: all 0.3s ease;
 }
 
-.order-section button:hover {
-  background-color: #d93800;
+.order-section button:hover,
+.order-section .btn:hover {
+  background: linear-gradient(90deg, #FF4500, #FF8C00, #FFD700);
   transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* Градієнтна форма з тінню */
+.order-section .form {
+  background: linear-gradient(135deg, #ff4e00, #ff9900, #ffff00);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  max-width: 600px;
+  margin: 30px auto;
+  color: #000;
+  font-family: 'Rubik', sans-serif;
+  font-weight: bold;
+}
+
+/* Стиль для полів вводу та textarea */
+.order-section .form input,
+.order-section .form textarea,
+.order-section .form select {
+  width: 100%;
+  padding: 10px 12px;
+  margin: 10px 0 20px 0;
+  border: 2px solid #000;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* Кнопка надсилання у формі */
+.order-section .form .btn {
+  background-color: #28a745;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.order-section .form .btn:hover {
+  background-color: #218838;
 }
 
 /* ========= Контакти ========= */
@@ -315,9 +367,10 @@ body {
   }
 }
 
+/* Кнопка .btn */
 .btn {
   display: inline-block;
-  background: linear-gradient(90deg, #a8e063, #56ab2f, #2e7d32); /* зелений */
+  background: linear-gradient(90deg, #a8e063, #56ab2f, #2e7d32);
   color: #fff;
   text-decoration: none;
   padding: 10px 20px;
@@ -328,17 +381,17 @@ body {
 }
 
 .btn:hover {
-  background-color: #218838; /* темніший зелений при наведенні */
+  background-color: #218838;
 }
 
 /* Контейнер тексту героя */
 .hero-text {
-  position: absolute; /* щоб текст був поверх зображення */
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.6); /* темний напівпрозорий фон */
-  color: #ffffff; /* білий текст */
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
   padding: 30px 40px;
   border-radius: 15px;
   text-align: center;
@@ -352,14 +405,12 @@ body {
   font-size: 2.5rem;
   margin-bottom: 15px;
   text-shadow: 2px 2px 6px rgba(20, 83, 7, 0.7);
-
-  /* замість color використаємо градієнт */
-  background: linear-gradient(to bottom, #fbff01, #fffff9); /* зверху помаранчевий, донизу жовтий */
+  background: linear-gradient(to bottom, #fbff01, #fffff9);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
-
-
 
 /* Опис героя */
 .hero-text p {
@@ -370,7 +421,7 @@ body {
 
 /* Кнопка героя */
 .hero-text .btn {
-  background-color: #4CAF50; /* зелена кнопка */
+  background-color: #4CAF50;
   color: #fff;
   padding: 12px 30px;
   font-size: 1.1rem;
@@ -388,103 +439,18 @@ body {
 
 /* Підключення шрифту Rubik 80s Fade */
 @import url('https://fonts.googleapis.com/css2?family=Rubik+80s+Fade&display=swap');
-
-body {
-  font-family: 'Poppins', sans-serif; /* основний шрифт для тексту */
-}
+/* Додано підключення Rubik */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
 
 /* Заголовки форми */
 .order-section .section-title {
   font-family: 'Rubik 80s Fade', cursive;
   font-size: 2.5rem;
   text-align: center;
-  background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00); /* червоно-помаранчево-жовтий градієнт */
+  background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
   margin-bottom: 30px;
-}
-
-/* Поля форми */
-.order-section input[type="text"],
-.order-section input[type="tel"],
-.order-section select,
-.order-section textarea {
-  width: 100%;
-  padding: 12px 15px;
-  margin: 10px 0 20px 0;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-
-/* Ефект при фокусі */
-.order-section input:focus,
-.order-section textarea:focus,
-.order-section select:focus {
-  outline: none;
-  border: 2px solid #FF4500; /* яскраво-оранжевий */
-  box-shadow: 0 0 8px rgba(255, 69, 0, 0.4);
-}
-
-/* Кнопка надсилання */
-.order-section .btn {
-   background: linear-gradient(90deg, #a8e063, #56ab2f, #2e7d32); /* червоно-помаранчево-жовтий градієнт */
-  color: #fff;
-  padding: 12px 25px;
-  font-size: 1.1rem;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.order-section .btn:hover {
-  background: linear-gradient(90deg, #FF4500, #FF8C00, #FFD700);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-}
-
-
-/* Градієнтна форма з тінню */
-.order-section .form {
-  background: linear-gradient(135deg, #ff4e00, #ff9900, #ffff00); /* червоно-помаранчево-жовтий градієнт */
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7); /* чорна тінь */
-  max-width: 600px;
-  margin: 30px auto;
-  color: #000; /* текст чорний для контрасту */
-  font-family: 'Rubik', sans-serif; /* підключений Rubik */
-  font-weight: bold; /* жирний текст */
-}
-
-
-/* Стиль для полів вводу та textarea */
-.order-section .form input,
-.order-section .form textarea,
-.order-section .form select {
-  width: 100%;
-  padding: 10px 12px;
-  margin: 10px 0 20px 0;
-  border: 2px solid #000; /* чорна обводка */
-  border-radius: 8px;
-  font-size: 16px;
-}
-
-/* Кнопка надсилання */
-.order-section .form .btn {
-  background-color: #28a745; /* зелена кнопка */
-  color: #fff;
-  padding: 12px 25px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: all 0.3s ease;
-}
-
-.order-section .form .btn:hover {
-  background-color: #218838;
 }
