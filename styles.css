@@ -1,7 +1,4 @@
-/* ========= Google Fonts ========= */
-/* У HTML додай: 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"> 
-*/
+
 
 /* ========= Основні налаштування ========= */
 * {
@@ -316,4 +313,178 @@ body {
   .order-section form {
     width: 100%;
   }
+}
+
+.btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #a8e063, #56ab2f, #2e7d32); /* зелений */
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #218838; /* темніший зелений при наведенні */
+}
+
+/* Контейнер тексту героя */
+.hero-text {
+  position: absolute; /* щоб текст був поверх зображення */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.6); /* темний напівпрозорий фон */
+  color: #ffffff; /* білий текст */
+  padding: 30px 40px;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 500px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Заголовок героя */
+.hero-text h2 {
+  font-family: 'Rubik 80s Fade', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 6px rgba(20, 83, 7, 0.7);
+
+  /* замість color використаємо градієнт */
+  background: linear-gradient(to bottom, #fbff01, #fffff9); /* зверху помаранчевий, донизу жовтий */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+/* Опис героя */
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+/* Кнопка героя */
+.hero-text .btn {
+  background-color: #4CAF50; /* зелена кнопка */
+  color: #fff;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.hero-text .btn:hover {
+  background-color: #45a049;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+/* Підключення шрифту Rubik 80s Fade */
+@import url('https://fonts.googleapis.com/css2?family=Rubik+80s+Fade&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif; /* основний шрифт для тексту */
+}
+
+/* Заголовки форми */
+.order-section .section-title {
+  font-family: 'Rubik 80s Fade', cursive;
+  font-size: 2.5rem;
+  text-align: center;
+  background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00); /* червоно-помаранчево-жовтий градієнт */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 30px;
+}
+
+/* Поля форми */
+.order-section input[type="text"],
+.order-section input[type="tel"],
+.order-section select,
+.order-section textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0 20px 0;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+/* Ефект при фокусі */
+.order-section input:focus,
+.order-section textarea:focus,
+.order-section select:focus {
+  outline: none;
+  border: 2px solid #FF4500; /* яскраво-оранжевий */
+  box-shadow: 0 0 8px rgba(255, 69, 0, 0.4);
+}
+
+/* Кнопка надсилання */
+.order-section .btn {
+   background: linear-gradient(90deg, #a8e063, #56ab2f, #2e7d32); /* червоно-помаранчево-жовтий градієнт */
+  color: #fff;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.order-section .btn:hover {
+  background: linear-gradient(90deg, #FF4500, #FF8C00, #FFD700);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+
+/* Градієнтна форма з тінню */
+.order-section .form {
+  background: linear-gradient(135deg, #ff4e00, #ff9900, #ffff00); /* червоно-помаранчево-жовтий градієнт */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7); /* чорна тінь */
+  max-width: 600px;
+  margin: 30px auto;
+  color: #000; /* текст чорний для контрасту */
+  font-family: 'Rubik', sans-serif; /* підключений Rubik */
+  font-weight: bold; /* жирний текст */
+}
+
+
+/* Стиль для полів вводу та textarea */
+.order-section .form input,
+.order-section .form textarea,
+.order-section .form select {
+  width: 100%;
+  padding: 10px 12px;
+  margin: 10px 0 20px 0;
+  border: 2px solid #000; /* чорна обводка */
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* Кнопка надсилання */
+.order-section .form .btn {
+  background-color: #28a745; /* зелена кнопка */
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.order-section .form .btn:hover {
+  background-color: #218838;
 }
