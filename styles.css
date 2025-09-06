@@ -1,62 +1,300 @@
-/* прості стилі для демонстрації */
-:root{
-  --bg:#fff8f0;
-  --accent:#d64527;
-  --dark:#222;
-  --muted:#666;
+/* ========= Основні налаштування ========= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
 }
 
-*{box-sizing:border-box}
-body{
-  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
-  margin:0;
-  background:var(--bg);
-  color:var(--dark);
-  line-height:1.4;
+body {
+  background-color: #fff8f0;
+  color: #333;
+  line-height: 1.6;
 }
-.container{max-width:1000px;margin:0 auto;padding:1rem;}
 
-.site-header{
-  background:#fff;
-  border-bottom:1px solid #eee;
-  padding:.75rem 0;
+/* ========= Контейнери ========= */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
 }
-.site-header .container{display:flex;align-items:center;justify-content:space-between;}
-.site-header h1{margin:0;font-size:1.25rem;color:var(--accent);}
-.site-header nav a{margin-left:1rem;text-decoration:none;color:var(--dark);font-weight:600}
 
-.hero{display:block;text-align:center;padding:1rem 0}
-.hero img{max-width:100%;height:auto;border-radius:8px;margin-top:.75rem}
-
-.features{display:flex;gap:2rem;flex-wrap:wrap;padding:1rem 0}
-.features ul, .features ol{margin:0;padding-left:1.2rem}
-
-.menu-preview table{
-  width:100%;
-  border-collapse:collapse;
-  margin-top:.5rem;
-  background:#fff;
-  border-radius:6px;
-  overflow:hidden;
+/* ========= Хедер ========= */
+.site-header {
+  background-color: #ff6f3c;
+  color: #fff;
+  padding: 20px 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
-.menu-preview th, .menu-preview td{
-  padding:.6rem .75rem;
-  border-bottom:1px solid #f0f0f0;
-  text-align:left;
-}
-.menu-preview thead th{background:#faf4f0;font-weight:700}
 
-.order-section form{
-  background:#fff;padding:1rem;border-radius:8px;margin-top:.5rem;
-  box-shadow:0 2px 8px rgba(0,0,0,.03);
+.site-header h1 {
+  font-family: 'Georgia', serif;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 10px;
 }
-.order-section label{display:block;margin-bottom:.6rem;font-size:.95rem}
+
+.site-header nav {
+  text-align: center;
+}
+
+.site-header nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.site-header nav a:hover {
+  color: #ffe5d1;
+}
+
+/* ========= Секція герой ========= */
+.hero {
+  text-align: center;
+  padding: 50px 0;
+  background: linear-gradient(rgba(255,111,60,0.2), rgba(255,111,60,0.1)), #fff8f0;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  color: #d93800;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.hero img {
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* ========= Фішки ========= */
+.features {
+  background-color: #fff3e0;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.features h3 {
+  color: #d93800;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.features ul,
+.features ol {
+  list-style-position: inside;
+  margin-bottom: 20px;
+  padding-left: 0;
+}
+
+.features li {
+  font-size: 1.1rem;
+  padding: 5px 0;
+  position: relative;
+  padding-left: 35px;
+}
+
+/* Додаємо іконку піци перед пунктом */
+.features li::before {
+  content: "🍕";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* ========= Меню ========= */
+.menu-preview {
+  padding: 40px 0;
+}
+
+.menu-preview h2 {
+  text-align: center;
+  color: #d93800;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.menu-preview table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.menu-preview th,
+.menu-preview td {
+  border: 1px solid #ff6f3c;
+  padding: 10px;
+  text-align: center;
+}
+
+.menu-preview th {
+  background-color: #ff6f3c;
+  color: #fff;
+}
+
+.menu-preview tbody tr:nth-child(even) {
+  background-color: #fff2e0;
+}
+
+/* Додаємо кнопку "Замовити" у таблицю */
+.menu-preview .order-btn {
+  background-color: #d93800;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.menu-preview .order-btn:hover {
+  background-color: #ff6f3c;
+}
+
+/* ========= Форма замовлення ========= */
+.order-section {
+  background-color: #fff3e0;
+  padding: 40px 0;
+  border-radius: 15px;
+}
+
+.order-section h2 {
+  text-align: center;
+  color: #d93800;
+  margin-bottom: 25px;
+  font-size: 2rem;
+}
+
+.order-section form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.order-section fieldset {
+  border: 2px solid #ff6f3c;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.order-section legend {
+  font-weight: bold;
+  color: #d93800;
+}
+
+.order-section label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
 .order-section input[type="text"],
 .order-section input[type="tel"],
-.order-section textarea{width:100%;padding:.5rem;border:1px solid #ddd;border-radius:6px;margin-top:.25rem}
-.order-section fieldset{border:1px dashed #eee;padding:.6rem;border-radius:6px;margin-bottom:.8rem}
-.order-section button{background:var(--accent);color:#fff;padding:.6rem 1rem;border:none;border-radius:6px;font-weight:700;cursor:pointer}
+.order-section textarea {
+  padding: 10px;
+  border: 1px solid #ff6f3c;
+  border-radius: 8px;
+  font-size: 1rem;
+}
 
-.contacts img{max-width:100%;height:auto;border-radius:6px;margin-top:.5rem}
+.order-section button {
+  background-color: #ff6f3c;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 
-.site-footer{padding:1rem 0;margin-top:1rem;text-align:center;color:var(--muted);font-size:.9rem}
+.order-section button:hover {
+  background-color: #d93800;
+}
+
+/* ========= Контакти ========= */
+.contacts {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.contacts a {
+  color: #d93800;
+  text-decoration: none;
+}
+
+.contacts a:hover {
+  text-decoration: underline;
+}
+
+.contacts img {
+  margin-top: 20px;
+  border-radius: 15px;
+  max-width: 100%;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* ========= Про сайт ========= */
+.about-link {
+  background-color: #fff8f0;
+  padding: 30px 0;
+  text-align: center;
+}
+
+.about-link a {
+  color: #ff6f3c;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.about-link a:hover {
+  color: #d93800;
+}
+
+/* ========= Футер ========= */
+.site-footer {
+  background-color: #ff6f3c;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.site-footer p {
+  font-size: 1rem;
+}
+
+/* ========= Адаптивність ========= */
+@media (max-width: 768px) {
+  .site-header nav a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .features h3 {
+    font-size: 1.5rem;
+  }
+
+  .menu-preview table {
+    font-size: 0.9rem;
+  }
+
+  .order-section form {
+    width: 100%;
+  }
+}
