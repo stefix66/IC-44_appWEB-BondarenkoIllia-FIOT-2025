@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Меню — BellaPizza</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- хедер -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <h1 class="logo">BellaPizza — Меню 🍕</h1>
+      <nav class="main-nav">
+        <a href="index.html">Головна</a>
+        <a href="menu.html" class="active">Меню</a>
+        <a href="about.html">Про пицерію</a>
+        <a href="index.html#order">Замовлення</a>
+        <a href="index.html#contacts">Контакти</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="menu-preview">
+      <h2 class="section-title">Наше меню</h2>
+      <p style="text-align:center;margin-bottom:20px;">
+        Спробуйте нашу класичну і фірмову піцу, приготовану з любов’ю ❤️
+      </p>
+
+      <table>
+        <caption>Асортимент піци</caption>
+        <thead>
+          <tr>
+            <th>Назва</th>
+            <th>Опис</th>
+            <th>Розмір</th>
+            <th>Ціна</th>
+            <th>Дія</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>🍕 Маргарита</td>
+            <td>Томати, моцарела, базилік</td>
+            <td>30 см</td>
+            <td>₴199</td>
+            <td><button class="order-btn" onclick="scrollToOrder()">Замовити</button></td>
+          </tr>
+          <tr>
+            <td>🍕 Пепероні</td>
+            <td>Пепероні, томатний соус, моцарела</td>
+            <td>30 см</td>
+            <td>₴249</td>
+            <td><button class="order-btn" onclick="scrollToOrder()">Замовити</button></td>
+          </tr>
+          <tr>
+            <td>🍕 Гавайська</td>
+            <td>Шинка, ананас, моцарела</td>
+            <td>32 см</td>
+            <td>₴289</td>
+            <td><button class="order-btn" onclick="scrollToOrder()">Замовити</button></td>
+          </tr>
+          <tr>
+            <td>🍕 Чотири сири</td>
+            <td>Моцарела, горгонзола, пармезан, рікотта</td>
+            <td>30 см</td>
+            <td>₴319</td>
+            <td><button class="order-btn" onclick="scrollToOrder()">Замовити</button></td>
+          </tr>
+          <tr>
+            <td>🍕 Bella Special</td>
+            <td>Прошутто, рукола, пармезан, моцарела</td>
+            <td>32 см</td>
+            <td>₴329</td>
+            <td><button class="order-btn" onclick="scrollToOrder()">Замовити</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="back-link">
+      <a href="index.html#order" class="btn-outline">Перейти до замовлення</a>
+    </div>
+  </main>
+
+  <!-- футер -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> BellaPizza — всі права захищені</p>
+    </div>
+  </footer>
+
+  <script>
+    // оновлюємо рік
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // прокрутка до замовлення на головній
+    function scrollToOrder() {
+      window.location.href = "index.html#order";
+    }
+  </script>
+</body>
+</html>

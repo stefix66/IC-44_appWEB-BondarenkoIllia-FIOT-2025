@@ -7,13 +7,14 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- шапка -->
   <header class="site-header">
-    <div class="container">
-      <h1>BellaPizza 🍕</h1>
-      <nav>
-        <a href="index.html">Головна</a>
+    <div class="container nav-container">
+      <h1 class="logo">BellaPizza 🍕</h1>
+      <nav class="main-nav">
+        <a href="index.html" class="active">Головна</a>
         <a href="menu.html">Меню</a>
-        <a href="about.html">Про пицерію (опис)</a>
+        <a href="about.html">Про пицерію</a>
         <a href="#order">Замовлення</a>
         <a href="#contacts">Контакти</a>
       </nav>
@@ -21,33 +22,41 @@
   </header>
 
   <main class="container">
-    <!-- секція "герой" -->
+    <!-- герой -->
     <section class="hero">
-      <h2>Найсмачніша піца в місті</h2>
-      <p>Свіжа італійська піца на дров’яній печі. Доставка за 30–45 хвилин.</p>
-      <img src="img/BellaPizzaMainPhoto.png" alt="BellaPizza — головна картинка" />
+      <div class="hero-text">
+        <h2>Найсмачніша піца в місті</h2>
+        <p>Свіжа італійська піца на дров’яній печі. Доставка за 30–45 хвилин.</p>
+        <a href="#order" class="btn">Замовити зараз</a>
+      </div>
+      <div class="hero-img">
+        <img src="img/BellaPizzaMainPhoto.png" alt="BellaPizza — головна картинка" />
+      </div>
     </section>
 
-    <!-- короткий список фішок -->
+    <!-- фішки -->
     <section class="features">
-      <h3>Чому обирають нас</h3>
-      <ul>
-        <li>Тісто ручної роботи</li>
-        <li>Свіжі локальні інгредієнти</li>
-        <li>Швидка доставка</li>
+      <h3 class="section-title">Чому обирають нас</h3>
+      <ul class="features-list">
+        <li>✨ Тісто ручної роботи</li>
+        <li>🥬 Свіжі локальні інгредієнти</li>
+        <li>⚡ Швидка доставка</li>
       </ul>
 
-      <ol>
-        <li>Оберіть піцу</li>
-        <li>Додайте в кошик</li>
-        <li>Оформіть замовлення</li>
-      </ol>
+      <div class="steps">
+        <h4>Як замовити</h4>
+        <ol>
+          <li>Оберіть піцу</li>
+          <li>Додайте в кошик</li>
+          <li>Оформіть замовлення</li>
+        </ol>
+      </div>
     </section>
 
-    <!-- таблиця: приклад меню -->
+    <!-- меню -->
     <section class="menu-preview">
-      <h2>Популярні позиції</h2>
-      <table>
+      <h2 class="section-title">Популярні позиції</h2>
+      <table class="menu-table">
         <caption>Меню — популярні піци</caption>
         <thead>
           <tr>
@@ -84,10 +93,10 @@
       </table>
     </section>
 
-    <!-- форма замовлення -->
+    <!-- форма -->
     <section id="order" class="order-section">
-      <h2>Швидке замовлення</h2>
-      <form id="orderForm">
+      <h2 class="section-title">Швидке замовлення</h2>
+      <form id="orderForm" class="form">
         <fieldset>
           <legend>Контактна інформація</legend>
           <label>
@@ -106,7 +115,7 @@
 
         <fieldset>
           <legend>Ваше замовлення</legend>
-          <p>Оберіть піци (поставте галочку):</p>
+          <p>Оберіть піци:</p>
           <label><input type="checkbox" name="items" value="Маргарита — ₴199" /> 🍕 Маргарита</label>
           <label><input type="checkbox" name="items" value="Пепероні — ₴249" /> 🍕 Пепероні</label>
           <label><input type="checkbox" name="items" value="Bella Special — ₴329" /> 🍕 Bella Special</label>
@@ -117,24 +126,26 @@
           </label>
         </fieldset>
 
-        <button type="submit">Надіслати замовлення</button>
+        <button type="submit" class="btn">Надіслати замовлення</button>
       </form>
       <div id="orderResult" aria-live="polite"></div>
     </section>
 
-    <!-- контакти і карта -->
+    <!-- контакти -->
     <section id="contacts" class="contacts">
-      <h2>Контакти</h2>
-      <p>Адреса: вул. Смачна, 7, м. ТвоєМісто</p>
-      <p>Телефон: <a href="tel:+380671234567">+380 67 123 45 67</a></p>
-      <img src="https://via.placeholder.com/600x300?text=Map+placeholder" alt="Карта розташування BellaPizza" />
+      <h2 class="section-title">Контакти</h2>
+      <p>📍 Адреса: вул. Смачна, 7, м. ТвоєМісто</p>
+      <p>📞 Телефон: <a href="tel:+380671234567">+380 67 123 45 67</a></p>
+      <div class="map">
+        <img src="https://via.placeholder.com/600x300?text=Map+placeholder" alt="Карта розташування BellaPizza" />
+      </div>
     </section>
 
-    <!-- посилання на опис -->
+    <!-- опис -->
     <section class="about-link">
-      <h3>Опис предметної галузі та бізнес-логіки</h3>
+      <h3 class="section-title">Опис предметної галузі та бізнес-логіки</h3>
       <p>Детальний опис можна знайти на окремій сторінці:</p>
-      <p><a href="about.html">Про предметну галузь та бізнес-логіку BellaPizza</a></p>
+      <p><a href="about.html" class="btn-outline">Перейти до опису</a></p>
     </section>
   </main>
 
@@ -145,10 +156,8 @@
   </footer>
 
   <script>
-    // оновлюємо рік
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // обробка форми замовлення
     document.getElementById('orderForm').addEventListener('submit', function (e) {
       e.preventDefault();
       const form = e.target;
@@ -176,7 +185,6 @@
       window.scrollTo({ top: result.offsetTop - 20, behavior: 'smooth' });
     });
 
-    // прокрутка до форми замовлення
     function scrollToOrder() {
       document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
     }
