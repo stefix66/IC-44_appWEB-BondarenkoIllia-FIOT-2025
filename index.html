@@ -1,10 +1,180 @@
 <!doctype html>
 <html lang="uk">
 <head>
-  <meta charset="utf-8">
-  <title>Тест BellaPizza</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BellaPizza — Головна</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Привіт, GitHub Pages працює!</h1>
+  <header class="site-header">
+    <div class="container">
+      <h1>BellaPizza 🍕</h1> <!-- заголовок рівня 1 -->
+      <nav>
+        <a href="index.html">Головна</a>
+        <a href="menu.html">Меню</a>
+        <a href="about.html">Про пицерію (опис)</a> <!-- посилання на сторінку з описом предметної галузі і бізнес-логіки -->
+        <a href="#order">Замовлення</a>
+        <a href="#contacts">Контакти</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- секція "герой" -->
+    <section class="hero">
+      <h2>Найсмачніша піца в місті</h2> <!-- заголовок рівня 2 -->
+      <p>Свіжа італійська піца на дров’яній печі. Доставка за 30–45 хвилин.</p>
+      <!-- зображення (placeholder) -->
+      <img src="https://via.placeholder.com/800x350?text=BellaPizza+Hero" alt="BellaPizza — головна картинка" />
+    </section>
+
+    <!-- короткий список фішок -->
+    <section class="features">
+      <h3>Чому обирають нас</h3> <!-- заголовок рівня 3 -->
+      <ul> <!-- маркований список -->
+        <li>Тісто ручної роботи</li>
+        <li>Свіжі локальні інгредієнти</li>
+        <li>Швидка доставка</li>
+      </ul>
+
+      <ol> <!-- нумерований список -->
+        <li>Оберіть піцу</li>
+        <li>Додайте в кошик</li>
+        <li>Оформіть замовлення</li>
+      </ol>
+    </section>
+
+    <!-- таблиця: приклад меню -->
+    <section class="menu-preview">
+      <h2>Популярні позиції</h2>
+      <table>
+        <caption>Меню — популярні піци</caption>
+        <thead>
+          <tr>
+            <th>Назва</th>
+            <th>Опис</th>
+            <th>Розмір</th>
+            <th>Ціна</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Маргарита</td>
+            <td>Томати, моцарела, базилік</td>
+            <td>30 см</td>
+            <td>₴199</td>
+          </tr>
+          <tr>
+            <td>Пепероні</td>
+            <td>Пепероні, томатний соус, моцарела</td>
+            <td>30 см</td>
+            <td>₴249</td>
+          </tr>
+          <tr>
+            <td>Bella Special</td>
+            <td>Прошутто, рукола, пармезан, моцарела</td>
+            <td>32 см</td>
+            <td>₴329</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- форма (обов'язкова) -->
+    <section id="order" class="order-section">
+      <h2>Швидке замовлення</h2>
+      <form id="orderForm">
+        <fieldset>
+          <legend>Контактна інформація</legend>
+          <label>
+            Ім'я:
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            Телефон:
+            <input type="tel" name="phone" required placeholder="+380 67 123 45 67" />
+          </label>
+          <label>
+            Адреса доставки:
+            <input type="text" name="address" required />
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Ваше замовлення</legend>
+          <p>Оберіть піци (поставте галочку):</p>
+          <label><input type="checkbox" name="items" value="Маргарита — ₴199" /> Маргарита</label>
+          <label><input type="checkbox" name="items" value="Пепероні — ₴249" /> Пепероні</label>
+          <label><input type="checkbox" name="items" value="Bella Special — ₴329" /> Bella Special</label>
+
+          <label>
+            Коментар для кухні:
+            <textarea name="note" rows="3" placeholder="Приклад: без цибулі"></textarea>
+          </label>
+        </fieldset>
+
+        <button type="submit">Надіслати замовлення</button>
+      </form>
+
+      <!-- тут JS покаже підтвердження -->
+      <div id="orderResult" aria-live="polite"></div>
+    </section>
+
+    <!-- контакти і карта -->
+    <section id="contacts" class="contacts">
+      <h2>Контакти</h2>
+      <p>Адреса: вул. Смачна, 7, м. ТвоєМісто</p>
+      <p>Телефон: <a href="tel:+380671234567">+380 67 123 45 67</a></p>
+
+      <!-- зображення карти-плейсхолдер -->
+      <img src="https://via.placeholder.com/600x300?text=Map+placeholder" alt="Карта розташування BellaPizza" />
+    </section>
+
+    <!-- посилання на сторінку з описом предметної галузі і бізнес-логіки -->
+    <section class="about-link">
+      <h3>Опис предметної галузі та бізнес-логіки</h3>
+      <p>Детальний опис можна знайти на окремій сторінці:</p>
+      <p><a href="about.html">Про предметну галузь та бізнес-логіку BellaPizza</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> BellaPizza — всі права захищені</p>
+    </div>
+  </footer>
+
+  <script>
+    // простий JS для обробки форми (виводить підтвердження локально)
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.getElementById('orderForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const form = e.target;
+      const name = form.name.value.trim();
+      const phone = form.phone.value.trim();
+      const address = form.address.value.trim();
+      const note = form.note.value.trim();
+      const items = Array.from(form.querySelectorAll('input[name="items"]:checked')).map(i => i.value);
+
+      if (!items.length) {
+        alert('Будь ласка, оберіть щонайменше одну позицію.');
+        return;
+      }
+
+      const result = document.getElementById('orderResult');
+      result.innerHTML = `
+        <h4>Дякуємо, ${name}!</h4>
+        <p>Ми отримали ваше замовлення:</p>
+        <ul>${items.map(it => '<li>' + it + '</li>').join('')}</ul>
+        <p>Адреса: ${address}<br>Телефон: ${phone}</p>
+        ${note ? '<p>Примітка: ' + note + '</p>' : ''}
+        <p><strong>Статус:</strong> Замовлення прийнято (демо-режим)</p>
+      `;
+      form.reset();
+      window.scrollTo({ top: result.offsetTop - 20, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
