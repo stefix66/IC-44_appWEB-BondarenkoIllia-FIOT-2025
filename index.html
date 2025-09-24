@@ -1,193 +1,632 @@
 <!doctype html>
-<html lang="uk">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>BellaPizza — Головна</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <!-- шапка -->
-  <header class="site-header">
-    <div class="container nav-container">
-      <h1 class="logo">BellaPizza 🍕</h1>
-      <nav class="main-nav">
-        <a href="index.html" class="active">Головна</a>
-        <a href="menu.html">Меню</a>
-        <a href="about.html">Про пицерію</a>
-        <a href="#order">Замовлення</a>
-        <a href="#contacts">Контакти</a>
-      </nav>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Веб-сайт піцерії BellaPizza</title>
+
+        <!-- CSS FILES -->    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">                    
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+        <link href="css/tooplate-crispy-kitchen.css" rel="stylesheet">
+        
+<!--
+
+
+
+-->
+    </head>
+    
+    <body>
+        
+        <nav class="navbar navbar-expand-lg bg-white shadow-lg">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <a class="navbar-brand" href="index.html">
+                    BellaPizza
+                </a>
+
+                <div class="d-lg-none">
+                    <button type="button" class="custom-btn btn btn-danger" data-bs-toggle="modal" data-bs-target="#BookingModal">Резервування</button>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Головна</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">Історія</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="menu.html">Меню</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="news.html">Наші новини</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Контакти</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="d-none d-lg-block">
+                    <button type="button" class="custom-btn btn btn-danger" data-bs-toggle="modal" data-bs-target="#BookingModal">Бронювання</button>
+                </div>
+
+            </div>
+        </nav>
+
+        <main>
+
+            <section class="hero">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-5 col-12 m-auto">
+                            <div class="heroText">
+
+                                <h1 class="text-white mb-lg-5 mb-3">Найкраща піца</h1>
+
+                                <div class="c-reviews my-3 d-flex flex-wrap align-items-center">
+                                    <div class="d-flex flex-wrap align-items-center">
+                                        <h4 class="text-white mb-0 me-3">4.4/5</h4>
+
+                                        <div class="reviews-stars">
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star reviews-icon"></i>
+                                        </div>
+                                    </div>
+
+                                    <p class="text-white w-100">З <strong>1,206+</strong> Відгуків відвідувачів</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-7 col-12">
+                            <div id="carouselExampleCaptions" class="carousel carousel-fade hero-carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+    <div class="d-flex justify-content-center align-items-center" style="height: 400px; overflow: hidden;">
+        <img src="images/slide/BellaPizza.jpg" class="img-fluid" style="max-height: 100%; object-fit: cover;" alt="">
     </div>
-  </header>
+    
+    <div class="carousel-caption">
+        <span class="text-white">
+            <i class="bi-geo-alt me-2"></i>
+            Київ, Україна
+        </span>
 
-  <main class="container">
-    <!-- герой -->
-    <section class="hero">
-      <div class="hero-text">
-        <h2>Найсмачніша піца в місті</h2>
-        <p>Свіжа італійська піца на дров’яній печі. Доставка за 30–45 хвилин.</p>
-        <a href="#order" class="btn">Замовити зараз</a>
-      </div>
-      <div class="hero-img">
-        <img src="img/BellaPizzaMainPhoto.png" alt="BellaPizza — головна картинка" />
-      </div>
-    </section>
-
-    <!-- фішки -->
-    <section class="features">
-      <h3 class="section-title">Чому обирають нас</h3>
-      <ul class="features-list">
-        <li>✨ Тісто ручної роботи</li>
-        <li>🥬 Свіжі локальні інгредієнти</li>
-        <li>⚡ Швидка доставка</li>
-      </ul>
-
-      <div class="steps">
-        <h4>Як замовити</h4>
-        <ol>
-          <li>Оберіть піцу</li>
-          <li>Додайте в кошик</li>
-          <li>Оформіть замовлення</li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- меню -->
-    <section class="menu-preview">
-      <h2 class="section-title">Популярні позиції</h2>
-      <table class="menu-table">
-        <caption>Меню — популярні піци</caption>
-        <thead>
-          <tr>
-            <th>Назва</th>
-            <th>Опис</th>
-            <th>Розмір</th>
-            <th>Ціна</th>
-            <th>Дія</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>🍕 Маргарита</td>
-            <td>Томати, моцарела, базилік</td>
-            <td>30 см</td>
-            <td>₴199</td>
-            <td><button class="order-btn" onclick="scrollToOrder()">Замовити</button></td>
-          </tr>
-          <tr>
-            <td>🍕 Пепероні</td>
-            <td>Пепероні, томатний соус, моцарела</td>
-            <td>30 см</td>
-            <td>₴249</td>
-            <td><button class="order-btn" onclick="scrollToOrder()">Замовити</button></td>
-          </tr>
-          <tr>
-            <td>🍕 Bella Special</td>
-            <td>Прошутто, рукола, пармезан, моцарела</td>
-            <td>32 см</td>
-            <td>₴329</td>
-            <td><button class="order-btn" onclick="scrollToOrder()">Замовити</button></td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <!-- форма -->
-    <section id="order" class="order-section">
-      <h2 class="section-title">Швидке замовлення</h2>
-      <form id="orderForm" class="form">
-        <fieldset>
-          <legend>Контактна інформація</legend>
-          <label>
-            Ім'я:
-            <input type="text" name="name" required />
-          </label>
-          <label>
-            Телефон:
-            <input type="tel" name="phone" required placeholder="+380 67 123 45 67" />
-          </label>
-          <label>
-            Адреса доставки:
-            <input type="text" name="address" required />
-          </label>
-        </fieldset>
-
-        <fieldset>
-          <legend>Ваше замовлення</legend>
-          <p>Оберіть піци:</p>
-          <label><input type="checkbox" name="items" value="Маргарита — ₴199" /> 🍕 Маргарита</label>
-          <label><input type="checkbox" name="items" value="Пепероні — ₴249" /> 🍕 Пепероні</label>
-          <label><input type="checkbox" name="items" value="Bella Special — ₴329" /> 🍕 Bella Special</label>
-
-          <label>
-            Коментар для кухні:
-            <textarea name="note" rows="3" placeholder="Приклад: без цибулі"></textarea>
-          </label>
-        </fieldset>
-
-        <button type="submit" class="btn">Надіслати замовлення</button>
-      </form>
-      <div id="orderResult" aria-live="polite"></div>
-    </section>
-
-    <!-- контакти -->
-    <section id="contacts" class="contacts">
-      <h2 class="section-title">Контакти</h2>
-      <p>📍 Адреса: вул. Смачна, 7, м.Київ</p>
-      <p>📞 Телефон: <a href="tel:+380671234567">+380 67 123 45 67</a></p>
-      <div class="map">
-        <img src="img/Adressa.png" alt="Карта розташування BellaPizza" />
-      </div>
-    </section>
-
-    <!-- опис -->
-    <section class="about-link">
-      <h3 class="section-title">Опис предметної галузі та бізнес-логіки</h3>
-      <p>Детальний опис можна знайти на окремій сторінці:</p>
-      <p><a href="about.html" class="btn-outline">Перейти до опису</a></p>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; <span id="year"></span> BellaPizza — всі права захищені</p>
+        <h4 class="hero-text">Піцерія BellaPizza</h4>
     </div>
-  </footer>
+</div>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
 
-    document.getElementById('orderForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      const form = e.target;
-      const name = form.name.value.trim();
-      const phone = form.phone.value.trim();
-      const address = form.address.value.trim();
-      const note = form.note.value.trim();
-      const items = Array.from(form.querySelectorAll('input[name="items"]:checked')).map(i => i.value);
+                                    <div class="carousel-item">
+                                        <div class="carousel-image-wrap">
+                                            <img src="images/slide/peperoni.jpg" class="img-fluid carousel-image" alt="">
+                                        </div>
+                                        
+                                        <div class="carousel-caption">
+                                            <div class="d-flex align-items-center">
+                                                <h4 class="hero-text">Пепероні</h4>
 
-      if (!items.length) {
-        alert('Будь ласка, оберіть щонайменше одну позицію.');
-        return;
-      }
+                                                <span class="price-tag ms-4"><small>₴</small>550</span>
+                                            </div>
 
-      const result = document.getElementById('orderResult');
-      result.innerHTML = `
-        <h4>Дякуємо, ${name}!</h4>
-        <p>Ми отримали ваше замовлення:</p>
-        <ul>${items.map(it => '<li>' + it + '</li>').join('')}</ul>
-        <p>Адреса: ${address}<br>Телефон: ${phone}</p>
-        ${note ? '<p>Примітка: ' + note + '</p>' : ''}
-        <p><strong>Статус:</strong> Замовлення прийнято (демо-режим)</p>
-      `;
-      form.reset();
-      window.scrollTo({ top: result.offsetTop - 20, behavior: 'smooth' });
-    });
+                                            <div class="d-flex flex-wrap align-items-center">
+                                                <h5 class="reviews-text mb-0 me-3">4.6/5</h5>
 
-    function scrollToOrder() {
-      document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
-    }
-  </script>
-</body>
+                                                <div class="reviews-stars">
+                                                    <i class="bi-star-fill reviews-icon"></i>
+                                                    <i class="bi-star-fill reviews-icon"></i>
+                                                    <i class="bi-star-fill reviews-icon"></i>
+                                                    <i class="bi-star-fill reviews-icon"></i>
+                                                    <i class="bi-star reviews-icon"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <div class="carousel-image-wrap">
+                                            <img src="images/slide/Margarita.jpg" class="img-fluid carousel-image" alt="">
+                                        </div>
+                                        
+                                        <div class="carousel-caption">
+                                            <div class="d-flex align-items-center">
+                                                <h4 class="hero-text">Маргарита</h4>
+
+                                                <span class="price-tag ms-4"><small>₴</small>400</span>
+                                            </div>
+
+                                            <div class="d-flex flex-wrap align-items-center">
+                                                <h5 class="reviews-text mb-0 me-3">4.3/5</h5>
+
+                                                <div class="reviews-stars">
+                                                    <i class="bi-star-fill reviews-icon"></i>
+                                                    <i class="bi-star-fill reviews-icon"></i>
+                                                    <i class="bi-star-fill reviews-icon"></i>
+                                                    <i class="bi-star-fill reviews-icon"></i>
+                                                    <i class="bi-star reviews-icon"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="video-wrap">
+                    <video autoplay="" loop="" muted="" class="custom-video" poster="">
+                        <source src="video/production_ID_3769033.mp4" type="video/mp4">
+                        	Your browser does not support the video tag.
+                    	</video>
+                </div>
+
+                <div class="overlay"></div>
+            </section>
+
+            <section class="menu section-padding">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-12">
+                            <h2 class="text-center mb-lg-5 mb-4">Спеціальні меню</h2>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="menu-thumb">
+                                <div class="menu-image-wrap">
+                                    <img src="images/breakfast/brett-jordan-8xt8-HIFqc8-unsplash.jpg" class="img-fluid menu-image" alt="">
+
+                                    <span class="menu-tag bg-warning">Сніданок</span>
+                                </div>
+
+                                <div class="menu-info d-flex flex-wrap align-items-center">
+                                    <h4 class="mb-0">Ранкова свіжість</h4>
+
+                                    <span class="price-tag bg-white shadow-lg ms-4"><small>₴</small>249</span>
+
+                                    <div class="d-flex flex-wrap align-items-center w-100 mt-2">
+                                        <h6 class="reviews-text mb-0 me-3">4.3/5</h6>
+
+                                        <div class="reviews-stars">
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star reviews-icon"></i>
+                                        </div>
+
+                                        <p class="reviews-text mb-0 ms-4">102 Відгуки</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="menu-thumb">
+                                <div class="menu-image-wrap">
+                                    <img src="images/lunch/farhad-ibrahimzade-MGKqxm6u2bc-unsplash.jpg" class="img-fluid menu-image" alt="">
+
+                                    <span class="menu-tag bg-warning">Перекус</span>
+                                </div>
+
+                                <div class="menu-info d-flex flex-wrap align-items-center">
+                                    <h4 class="mb-0">Суп</h4>
+
+                                    <span class="price-tag bg-white shadow-lg ms-4"><small>₴</small>150</span>
+
+                                    <div class="d-flex flex-wrap align-items-center w-100 mt-2">
+                                        <h6 class="reviews-text mb-0 me-3">3/5</h6>
+
+                                        <div class="reviews-stars">
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star reviews-icon"></i>
+                                            <i class="bi-star reviews-icon"></i>
+                                        </div>
+
+                                        <p class="reviews-text mb-0 ms-4">50 Відгуків</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="menu-thumb">
+                                <div class="menu-image-wrap">
+                                    <img src="images/dinner/keriliwi-c3mFafsFz2w-unsplash.jpg" class="img-fluid menu-image" alt="">
+
+                                    <span class="menu-tag bg-warning">Вечеря</span>
+                                </div>
+
+                                <div class="menu-info d-flex flex-wrap align-items-center">
+                                    <h4 class="mb-0">Преміум стейк</h4>
+
+                                    <span class="price-tag bg-white shadow-lg ms-4"><small>₴</small>2000</span>
+
+                                    <del class="ms-4"><small>₴</small>3999</del>
+
+                                    <div class="d-flex flex-wrap align-items-center w-100 mt-2">
+                                        <h6 class="reviews-text mb-0 me-3">4.7/5</h6>
+
+                                        <div class="reviews-stars">
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star reviews-icon"></i>
+                                        </div>
+
+                                        <p class="reviews-text mb-0 ms-4">86 Відгуків</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="menu-thumb">
+                                <div class="menu-image-wrap">
+                                    <img src="images/dinner/farhad-ibrahimzade-ZipYER3NLhY-unsplash.jpg" class="img-fluid menu-image" alt="">
+
+                                    <span class="menu-tag bg-warning">Вечеря</span>
+                                </div>
+
+                                <div class="menu-info d-flex flex-wrap align-items-center">
+                                    <h4 class="mb-0">Морепродукти</h4>
+
+                                    <span class="price-tag bg-white shadow-lg ms-4"><small>₴</small>1650</span>
+
+                                    <del class="ms-4"><small>₴</small>2499</del>
+
+                                    <div class="d-flex flex-wrap align-items-center w-100 mt-2">
+                                        <h6 class="reviews-text mb-0 me-3">4/5</h6>
+
+                                        <div class="reviews-stars">
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star reviews-icon"></i>
+                                        </div>
+
+                                        <p class="reviews-text mb-0 ms-4">44 Відгуки</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="menu-thumb">
+                                <div class="menu-image-wrap">
+                                    <img src="images/breakfast/louis-hansel-dphM2U1xq0U-unsplash.jpg" class="img-fluid menu-image" alt="">
+
+                                    <span class="menu-tag bg-warning">Сніданок</span>
+                                </div>
+
+                                <div class="menu-info d-flex flex-wrap align-items-center">
+                                    <h4 class="mb-0">Бургер Сет</h4>
+
+                                    <span class="price-tag bg-white shadow-lg ms-4"><small>₴</small>800</span>
+
+                                    <div class="d-flex flex-wrap align-items-center w-100 mt-2">
+                                        <h6 class="reviews-text mb-0 me-3">4.3/5</h6>
+
+                                        <div class="reviews-stars">
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star reviews-icon"></i>
+                                        </div>
+
+                                        <p class="reviews-text mb-0 ms-4">102 Відгуки</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="menu-thumb">
+                                <div class="menu-image-wrap">
+                                    <img src="images/lunch/farhad-ibrahimzade-D5c9ZciQy_I-unsplash.jpg" class="img-fluid menu-image" alt="">
+
+                                    <span class="menu-tag bg-warning">Обід</span>
+                                </div>
+
+                                <div class="menu-info d-flex flex-wrap align-items-center">
+                                    <h4 class="mb-0">Здоровий Суп</h4>
+
+                                    <span class="price-tag bg-white shadow-lg ms-4"><small>₴</small>249</span>
+
+                                    <div class="d-flex flex-wrap align-items-center w-100 mt-2">
+                                        <h6 class="reviews-text mb-0 me-3">4/5</h6>
+
+                                        <div class="reviews-stars">
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star-fill reviews-icon"></i>
+                                            <i class="bi-star reviews-icon"></i>
+                                        </div>
+
+                                        <p class="reviews-text mb-0 ms-4">64 Відгуки</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="BgImage"></section>
+
+            <section class="news section-padding">
+                <div class="container">
+                    <div class="row">
+
+                        <h2 class="text-center mb-lg-5 mb-4">Новини &amp; Події</h2>
+
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="news-thumb mb-4">
+                                <a href="news-detail.html">
+                                    <img src="images/news/pablo-merchan-montes-Orz90t6o0e4-unsplash.jpg" class="img-fluid news-image" alt="">
+                                </a>
+                                
+                                <div class="news-text-info news-text-info-large">
+                                    <span class="category-tag bg-danger">Featured</span>
+
+                                    <h5 class="news-title mt-2">
+                                        <a href="news-detail.html" class="news-title-link">Healthy Lifestyle and happy living tips</a>
+                                    </h5>
+                                </div>
+                            </div> 
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="news-thumb mb-4">
+                                <a href="news-detail.html">
+                                    <img src="images/news/stefan-johnson-xIFbDeGcy44-unsplash.jpg" class="img-fluid news-image" alt="">
+                                </a>
+                                
+                                <div class="news-text-info news-text-info-large">
+                                    <span class="category-tag bg-danger">Featured</span>
+
+                                    <h5 class="news-title mt-2">
+                                        <a href="news-detail.html" class="news-title-link">How to make a healthy meal</a>
+                                    </h5>
+                                </div>
+                            </div> 
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="news-thumb mb-lg-0 mb-lg-4 mb-0">
+                                <a href="news-detail.html">
+                                    <img src="images/news/gilles-lambert-S_LhjpfIdm4-unsplash.jpg" class="img-fluid news-image" alt="">
+                                </a>
+                                
+                                <div class="news-text-info">
+                                    <span class="category-tag me-3 bg-info">Promotions</span>
+
+                                    <strong>8 April 2022</strong>
+
+                                    <h5 class="news-title mt-2">
+                                        <a href="news-detail.html" class="news-title-link">Is Coconut good for you?</a>
+                                    </h5>
+                                </div>
+                            </div> 
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="news-thumb mb-lg-0 mb-lg-4 mb-2">
+                                <a href="news-detail.html">
+                                    <img src="images/news/caroline-attwood-bpPTlXWTOvg-unsplash.jpg" class="img-fluid news-image" alt="">
+                                </a>
+                                
+                                <div class="news-text-info">
+                                    <span class="category-tag">News</span>
+
+                                    <h5 class="news-title mt-2">
+                                        <a href="news-detail.html" class="news-title-link">Salmon Steak Noodle</a>
+                                    </h5>
+                                </div>
+                            </div> 
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="news-thumb mb-4">
+                                <a href="news-detail.html">
+                                    <img src="images/news/louis-hansel-GiIiRV0FjwU-unsplash.jpg" class="img-fluid news-image" alt="">
+                                </a>
+                                
+                                <div class="news-text-info">
+                                    <span class="category-tag me-3 bg-info">Meeting</span>
+
+                                    <strong>30 April 2022</strong>
+
+                                    <h5 class="news-title mt-2">
+                                        <a href="news-detail.html" class="news-title-link">Making a healthy salad</a>
+                                    </h5>
+                                </div>
+                            </div> 
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="site-footer section-padding">
+            
+            <div class="container">
+                
+                <div class="row">
+
+                    <div class="col-12">
+                        <h4 class="text-white mb-4 me-5">BellaPizza</h4>
+                    </div>
+
+                    <div class="col-lg-4 col-md-7 col-xs-12 tooplate-mt30">
+                        <h6 class="text-white mb-lg-4 mb-3">Локація</h6>
+
+                        <p>Київ, Україна</p>
+
+                        <a href="https://goo.gl/maps/wZVGLA7q64uC1s886" class="custom-btn btn btn-dark mt-2">Маршрут</a>
+                    </div>
+
+                    <div class="col-lg-4 col-md-5 col-xs-12 tooplate-mt30">
+                        <h6 class="text-white mb-lg-4 mb-3">Години роботи</h6>
+
+                        <p class="mb-2">Понеділок - П’ятниця</p>
+
+                        <p>10:00 AM - 08:00 PM</p>
+
+                        <p>Тел: <a href="tel: 010-02-0340" class="tel-link">096 000 00 00</a></p>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-xs-12 tooplate-mt30">
+                        <h6 class="text-white mb-lg-4 mb-3">Соціальні мережі</h6>
+
+                        <ul class="social-icon">
+                            <li><a href="#" class="social-icon-link bi-facebook"></a></li>
+
+                            <li><a href="#" class="social-icon-link bi-instagram"></a></li>
+
+                            <li><a href="" target="_blank"
+                            	 class="social-icon-link bi-twitter"></a></li>
+
+                            <li><a href="#" class="social-icon-link bi-youtube"></a></li>
+                        </ul>
+                    
+                        <p class="copyright-text tooplate-mt60">Copyright © 2022 BellaPizza Co., Ltd.</p>
+                        
+                    </div>
+
+                </div><!-- row ending -->
+                
+             </div><!-- container ending -->
+             
+        </footer>
+
+<!-- Modal -->
+        <div class="modal fade" id="BookingModal" tabindex="-1" aria-labelledby="BookingModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="mb-0">Забронювати стіл</h3>
+
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body d-flex flex-column justify-content-center">
+                        <div class="booking">
+                            
+                            <form class="booking-form row" role="form" action="#" method="post">
+                                <div class="col-lg-6 col-12">
+                                    <label for="name" class="form-label">Повне ім'я</label>
+
+                                    <input type="text" name="name" id="name" class="form-control" placeholder="Ваше ім'я" required>
+                                </div>
+
+                                <div class="col-lg-6 col-12">
+                                    <label for="email" class="form-label">Електронна адреса</label>
+
+                                    <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="your@email.com" required>
+                                </div>
+
+                                <div class="col-lg-6 col-12">
+                                    <label for="phone" class="form-label">Номер телефону</label>
+
+                                    <input type="telephone" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control" placeholder="123-456-7890">
+                                </div>
+
+                                <div class="col-lg-6 col-12">
+                                    <label for="people" class="form-label">Кількість осіб</label>
+
+                                    <input type="text" name="people" id="people" class="form-control" placeholder="12 осіб">
+                                </div>
+
+                                <div class="col-lg-6 col-12">
+                                    <label for="date" class="form-label">Дата</label>
+
+                                    <input type="date" name="date" id="date" value="" class="form-control">
+                                </div>
+
+                                <div class="col-lg-6 col-12">
+                                    <label for="time" class="form-label">Час</label>
+
+                                    <select class="form-select form-control" name="time" id="time">
+                                      <option value="5" selected>5:00 PM</option>
+                                      <option value="6">6:00 PM</option>
+                                      <option value="7">7:00 PM</option>
+                                      <option value="8">8:00 PM</option>
+                                      <option value="9">9:00 PM</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="message" class="form-label">Спеціальний запит</label>
+
+                                    <textarea class="form-control" rows="4" id="message" name="message" placeholder=""></textarea>
+                                </div>
+
+                                <div class="col-lg-4 col-12 ms-auto">
+                                    <button type="submit" class="form-control">Надіслати запит</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer"></div>
+                    
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/custom.js"></script>
+
+    </body>
 </html>

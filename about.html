@@ -1,83 +1,328 @@
 <!doctype html>
-<html lang="uk">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Про предметну галузь — BellaPizza</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <!-- шапка -->
-  <header class="site-header">
-    <div class="container nav-container">
-      <h1 class="logo">BellaPizza — Опис 🍕</h1>
-      <nav class="main-nav">
-        <a href="index.html">Головна</a>
-        <a href="menu.html">Меню</a>
-        <a href="about.html" class="active">Про пицерію</a>
-      </nav>
-    </div>
-  </header>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <main class="container">
-    <!-- предметна галузь -->
-    <section class="about-section">
-      <h2 class="section-title">📖 Предметна галузь</h2>
-      <p>
-        Онлайн-меню дозволяє клієнтам переглядати асортимент, дізнаватися ціни 
-        та робити попередні замовлення без дзвінка. Це спрощує обробку замовлень 
-        та знижує навантаження на телефонні лінії.
-      </p>
-    </section>
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-    <!-- бізнес-логіка -->
-    <section class="about-section">
-      <h3 class="section-title">⚙️ Бізнес-логіка</h3>
-      <ol>
-        <li>Користувач заходить на сайт і переглядає меню.</li>
-        <li>Додає позиції в кошик або позначає для замовлення.</li>
-        <li>Заповнює форму з контактами і адресою доставки.</li>
-        <li>Система (в demo-версії) відображає підтвердження замовлення адміністрації.</li>
-        <li>У реальній версії: замовлення надсилається на сервер і передається кухні/менеджеру.</li>
-      </ol>
-    </section>
+        <title>About BellaPizza</title>
 
-    <!-- функціональні вимоги -->
-    <section class="about-section">
-      <h3 class="section-title">✅ Функціональні вимоги</h3>
-      <ul class="styled-list">
-        <li>Показ меню з фото, описом і ціною.</li>
-        <li>Форма замовлення з перевіркою обраних позицій та контактів.</li>
-        <li>Сторінка контактів з картою та телефоном.</li>
-        <li>Можливість зберігати вибране (LocalStorage) та надсилати замовлення на сервер.</li>
-      </ul>
-    </section>
+        <!-- CSS FILES -->        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">                
+        <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- нефункціональні вимоги -->
-    <section class="about-section">
-      <h3 class="section-title">⚡ Нефункціональні вимоги</h3>
-      <ul class="styled-list">
-        <li>Адаптивний дизайн (мобільні/десктоп).</li>
-        <li>Швидкість завантаження &lt; 3 с (оптимізація контенту).</li>
-        <li>Простий інтуїтивний UX.</li>
-      </ul>
-    </section>
+        <link href="css/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- кнопка повернення -->
-    <div class="back-link">
-      <a href="index.html" class="btn-outline">&laquo; Повернутись на головну</a>
-    </div>
-  </main>
+        <link href="css/tooplate-crispy-kitchen.css" rel="stylesheet">
+<!--
 
-  <!-- футер -->
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; <span id="year"></span> BellaPizza — всі права захищені</p>
-    </div>
-  </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
+
+-->
+    </head>
+    
+    <body>
+        
+        <nav class="navbar navbar-expand-lg bg-white shadow-lg">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <a class="navbar-brand" href="index.html">
+                    BellaPizza
+                </a>
+
+                <div class="d-lg-none">
+                    <button type="button" class="custom-btn btn btn-danger" data-bs-toggle="modal" data-bs-target="#BookingModal">Бронювання</button>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Головна</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="about.html">Історія</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="menu.html">Меню</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="news.html">Наші новини</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Контакти</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="d-none d-lg-block">
+                    <button type="button" class="custom-btn btn btn-danger" data-bs-toggle="modal" data-bs-target="#BookingModal">Бронювання</button>
+                </div>
+
+            </div>
+        </nav>
+
+        <main>
+
+            <header class="site-header site-about-header">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-10 col-12 mx-auto">
+                            <h1 class="text-white">Історія піцерії</h1>
+
+                            <strong class="text-white">Це історія піцерії, яка еволюціонувала в нову цифрову еру</strong>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="overlay"></div>
+            </header>
+
+            <section class="about section-padding bg-white">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-6 col-12 mb-2">
+                            <h4 class="mb-3">BellaPizza - це піцерія з багатою історією і традиціями</h4>
+
+                            <a href="news.html" class="custom-btn btn btn-dark mt-3">Переглянути новини</a>
+
+                            <a href="contact.html" class="custom-btn btn btn-danger mt-3 ms-3">Сказати Привіт!</a>
+                        </div>
+
+                        <div class="col-lg-6 col-12">
+                        
+                        	
+
+                           <p>Ця піцерія була заснована в 1995 році і з тих пір стала улюбленим місцем для поціновувачів італійської кухні. Ми пишаємося своїми традиційними рецептами та використанням тільки найсвіжіших інгредієнтів.</p>
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="about section-padding">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-12">
+                            <h2 class="mb-5">Члени команди</h2>
+                        </div>
+
+                        <div class="col-lg-4 col-12">
+                            <div class="team-thumb">
+                                <img src="images/team/Ilya_Ceo.jpg" class="img-fluid team-image" alt="">
+                                
+                                <div class="team-info">
+                                    <h4 class="mt-3 mb-0">Ilya</h4>
+
+                                    <p>CEO &amp; Засновник</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-12 my-lg-0 my-4">
+                            <div class="team-thumb">
+                                <img src="images/team/nicolas-horn-MTZTGvDsHFY-unsplash.jpg" class="img-fluid team-image" alt="">
+
+                                <h4 class="mt-3 mb-0">Андрій</h4>
+
+                                <p>Менеджер</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-12">
+                            <div class="team-thumb">
+                                <img src="images/team/rc-cf-FMh5o5m5N9E-unsplash.jpg" class="img-fluid team-image" alt="">
+                                
+                                <h4 class="mt-3 mb-0">Петро</h4>
+
+                                <p>Старший шеф-кухар</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            
+            <section class="newsletter section-padding bg-white">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-6 col-12">
+                            <img src="images/charles-deluvio-FdDkfYFHqe4-unsplash.jpg" class="img-fluid newsletter-image" alt="">
+                        </div>
+
+                        <div class="col-lg-6 col-12 d-flex align-items-center mt-5 mt-lg-0 mx-auto">
+                            <div class="subscribe-form-wrap">
+                                <h4 class="mb-0">Наша розсилка</h4>
+
+                                <p>Щоденні новини про їжу</p>
+
+                                <form class="custom-form subscribe-form mt-4" role="form">
+                                    <input type="email" name="subscribe-email" id="subscribe-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Ваша електронна адреса" required="">
+
+                                    <button type="submit" class="form-control mb-3" id="subscribe">Підписатися</button>
+
+                                    <small>Підписуючись, ви погоджуєтеся з нашою Політикою конфіденційності та політикою обробки даних</small>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="site-footer section-padding">
+            
+            <div class="container">
+                
+                <div class="row">
+
+                    <div class="col-12">
+                        <h4 class="text-white mb-4 me-5">BellaPizza</h4>
+                    </div>
+
+                    <div class="col-lg-4 col-md-7 col-xs-12 tooplate-mt30">
+                        <h6 class="text-white mb-lg-4 mb-3">Місцезнаходження</h6>
+
+                        <p>Київ, Україна</p>
+
+                        <a href="https://goo.gl/maps/wZVGLA7q64uC1s886" class="custom-btn btn btn-dark mt-2">Маршрут</a>
+                    </div>
+
+                    <div class="col-lg-4 col-md-5 col-xs-12 tooplate-mt30">
+                        <h6 class="text-white mb-lg-4 mb-3">Години роботи</h6>
+
+                        <p class="mb-2">Понеділок - П'ятниця</p>
+
+                        <p>10:00 AM - 08:00 PM</p>
+
+                        <p>Тел: <a href="tel: 010-02-0340" class="tel-link">096 000 00 00</a></p>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-xs-12 tooplate-mt30">
+                        <h6 class="text-white mb-lg-4 mb-3">Соціальні мережі</h6>
+
+                        <ul class="social-icon">
+                            <li><a href="#" class="social-icon-link bi-facebook"></a></li>
+
+                            <li><a href="#" class="social-icon-link bi-instagram"></a></li>
+
+                            <<li><a href="" target="_blank"
+                            	 class="social-icon-link bi-twitter"></a></li>
+
+                            <li><a href="#" class="social-icon-link bi-youtube"></a></li>
+                        </ul>
+                    
+                        <p class="copyright-text tooplate-mt60">Copyright © 2022 BellaPizza Co., Ltd.</p>
+                        
+                    </div>
+
+                </div><!-- row ending -->
+                
+             </div><!-- container ending -->
+             
+        </footer>
+
+        <!-- Modal -->
+        <div class="modal fade" id="BookingModal" tabindex="-1" aria-labelledby="BookingModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="mb-0">Забронювати стіл</h3>
+
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body d-flex flex-column justify-content-center">
+                        <div class="booking">
+                            
+                            <form class="booking-form row" role="form" action="#" method="post">
+                                <div class="col-lg-6 col-12">
+                                    <label for="name" class="form-label">Повне ім'я</label>
+
+                                    <input type="text" name="name" id="name" class="form-control" placeholder="Ваше ім'я" required>
+                                </div>
+
+                                <div class="col-lg-6 col-12">
+                                    <label for="email" class="form-label">Електронна адреса</label>
+
+                                    <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="your@email.com" required>
+                                </div>
+
+                                <div class="col-lg-6 col-12">
+                                    <label for="phone" class="form-label">Номер телефону</label>
+
+                                    <input type="telephone" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control" placeholder="123-456-7890">
+                                </div>
+
+                                <div class="col-lg-6 col-12">
+                                    <label for="people" class="form-label">Кількість осіб</label>
+
+                                    <input type="text" name="people" id="people" class="form-control" placeholder="12 осіб">
+                                </div>
+
+                                <div class="col-lg-6 col-12">
+                                    <label for="date" class="form-label">Дата</label>
+
+                                    <input type="date" name="date" id="date" value="" class="form-control">
+                                </div>
+
+                                <div class="col-lg-6 col-12">
+                                    <label for="time" class="form-label">Час</label>
+
+                                    <select class="form-select form-control" name="time" id="time">
+                                      <option value="5" selected>5:00 PM</option>
+                                      <option value="6">6:00 PM</option>
+                                      <option value="7">7:00 PM</option>
+                                      <option value="8">8:00 PM</option>
+                                      <option value="9">9:00 PM</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="message" class="form-label">Спеціальний запит</label>
+
+                                    <textarea class="form-control" rows="4" id="message" name="message" placeholder=""></textarea>
+                                </div>
+
+                                <div class="col-lg-4 col-12 ms-auto">
+                                    <button type="submit" class="form-control">Надіслати запит</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer"></div>
+                    
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/custom.js"></script>
+
+    </body>
 </html>
