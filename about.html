@@ -40,7 +40,7 @@
                 </a>
 
                 <div class="d-lg-none">
-                    <button type="button" class="custom-btn btn btn-danger" data-bs-toggle="modal" data-bs-target="#BookingModal">Бронювання</button>
+                    <button type="button" class="custom-btn btn btn-danger" data-bs-toggle="modal" data-bs-target="#BookingModal">Замовлення</button>
                 </div>
 
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -68,7 +68,7 @@
                 </div>
 
                 <div class="d-none d-lg-block">
-                    <button type="button" class="custom-btn btn btn-danger" data-bs-toggle="modal" data-bs-target="#BookingModal">Бронювання</button>
+                    <button type="button" class="custom-btn btn btn-danger" data-bs-toggle="modal" data-bs-target="#BookingModal">Замовлення</button>
                 </div>
 
             </div>
@@ -191,7 +191,7 @@
 
         </main>
 
-        <footer class="site-footer section-padding">
+       <footer class="site-footer section-padding">
             
             <div class="container">
                 
@@ -202,17 +202,17 @@
                     </div>
 
                     <div class="col-lg-4 col-md-7 col-xs-12 tooplate-mt30">
-                        <h6 class="text-white mb-lg-4 mb-3">Місцезнаходження</h6>
+                        <h6 class="text-white mb-lg-4 mb-3">Локація</h6>
 
                         <p>Київ, Україна</p>
 
-                        <a href="https://goo.gl/maps/wZVGLA7q64uC1s886" class="custom-btn btn btn-dark mt-2">Маршрут</a>
+                        <a href="https://surl.li/wqdcwd" class="custom-btn btn btn-dark mt-2">Маршрут</a>
                     </div>
 
                     <div class="col-lg-4 col-md-5 col-xs-12 tooplate-mt30">
                         <h6 class="text-white mb-lg-4 mb-3">Години роботи</h6>
 
-                        <p class="mb-2">Понеділок - П'ятниця</p>
+                        <p class="mb-2">Понеділок - П’ятниця</p>
 
                         <p>10:00 AM - 08:00 PM</p>
 
@@ -227,7 +227,7 @@
 
                             <li><a href="#" class="social-icon-link bi-instagram"></a></li>
 
-                            <<li><a href="" target="_blank"
+                            <li><a href="" target="_blank"
                             	 class="social-icon-link bi-twitter"></a></li>
 
                             <li><a href="#" class="social-icon-link bi-youtube"></a></li>
@@ -244,80 +244,81 @@
         </footer>
 
         <!-- Modal -->
-        <div class="modal fade" id="BookingModal" tabindex="-1" aria-labelledby="BookingModal" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h3 class="mb-0">Забронювати стіл</h3>
+<div class="modal fade" id="BookingModal" tabindex="-1" aria-labelledby="BookingModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="mb-0">Замовлення доставки</h3>
 
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-
-                    <div class="modal-body d-flex flex-column justify-content-center">
-                        <div class="booking">
-                            
-                            <form class="booking-form row" role="form" action="#" method="post">
-                                <div class="col-lg-6 col-12">
-                                    <label for="name" class="form-label">Повне ім'я</label>
-
-                                    <input type="text" name="name" id="name" class="form-control" placeholder="Ваше ім'я" required>
-                                </div>
-
-                                <div class="col-lg-6 col-12">
-                                    <label for="email" class="form-label">Електронна адреса</label>
-
-                                    <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="your@email.com" required>
-                                </div>
-
-                                <div class="col-lg-6 col-12">
-                                    <label for="phone" class="form-label">Номер телефону</label>
-
-                                    <input type="telephone" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control" placeholder="123-456-7890">
-                                </div>
-
-                                <div class="col-lg-6 col-12">
-                                    <label for="people" class="form-label">Кількість осіб</label>
-
-                                    <input type="text" name="people" id="people" class="form-control" placeholder="12 осіб">
-                                </div>
-
-                                <div class="col-lg-6 col-12">
-                                    <label for="date" class="form-label">Дата</label>
-
-                                    <input type="date" name="date" id="date" value="" class="form-control">
-                                </div>
-
-                                <div class="col-lg-6 col-12">
-                                    <label for="time" class="form-label">Час</label>
-
-                                    <select class="form-select form-control" name="time" id="time">
-                                      <option value="5" selected>5:00 PM</option>
-                                      <option value="6">6:00 PM</option>
-                                      <option value="7">7:00 PM</option>
-                                      <option value="8">8:00 PM</option>
-                                      <option value="9">9:00 PM</option>
-                                    </select>
-                                </div>
-
-                                <div class="col-12">
-                                    <label for="message" class="form-label">Спеціальний запит</label>
-
-                                    <textarea class="form-control" rows="4" id="message" name="message" placeholder=""></textarea>
-                                </div>
-
-                                <div class="col-lg-4 col-12 ms-auto">
-                                    <button type="submit" class="form-control">Надіслати запит</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="modal-footer"></div>
-                    
-                </div>
-                
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрити"></button>
             </div>
+
+            <div class="modal-body d-flex flex-column justify-content-center">
+                <div class="delivery">
+                    
+                    <form class="delivery-form row" role="form" action="#" method="post">
+                        <!-- Дані користувача -->
+                        <div class="col-lg-6 col-12">
+                            <label for="name" class="form-label">Повне ім'я</label>
+                            <input type="text" name="name" id="name" class="form-control" placeholder="Ваше ім'я" required>
+                        </div>
+
+                        <div class="col-lg-6 col-12">
+                            <label for="email" class="form-label">Електронна адреса</label>
+                            <input type="email" name="email" id="email" class="form-control" placeholder="your@email.com" required>
+                        </div>
+
+                        <div class="col-lg-6 col-12">
+                            <label for="phone" class="form-label">Номер телефону</label>
+                            <input type="tel" name="phone" id="phone" class="form-control" placeholder="+380 99 123 45 67" required>
+                        </div>
+
+                        <div class="col-lg-6 col-12">
+                            <label for="address" class="form-label">Адреса доставки</label>
+                            <input type="text" name="address" id="address" class="form-control" placeholder="м. Київ, вул. Хрещатик, 12" required>
+                        </div>
+
+                        <!-- Вибір страв -->
+                        <div class="col-12 mt-3">
+                            <label for="menu-items" class="form-label">Виберіть страви</label>
+                            <select multiple class="form-select" id="menu-items" name="menuItems[]">
+                                <option value="1">Маргарита — 150 грн</option>
+                                <option value="2">Пепероні — 180 грн</option>
+                                <option value="3">Кола 0.5л — 40 грн</option>
+                                <option value="4">Тірамісу — 90 грн</option>
+                            </select>
+                            <small class="text-muted">Утримуйте Ctrl (або Cmd на Mac), щоб вибрати кілька позицій</small>
+                        </div>
+
+                        <!-- Спосіб оплати -->
+                        <div class="col-lg-6 col-12 mt-3">
+                            <label for="payment" class="form-label">Спосіб оплати</label>
+                            <select class="form-select" name="payment" id="payment" required>
+                                <option value="Cash" selected>Готівка</option>
+                                <option value="Card">Карта при отриманні</option>
+                                <option value="Online">Онлайн-оплата</option>
+                            </select>
+                        </div>
+
+                        <!-- Коментар -->
+                        <div class="col-12 mt-3">
+                            <label for="comment" class="form-label">Коментар до замовлення</label>
+                            <textarea class="form-control" rows="3" id="comment" name="comment" placeholder="Наприклад: без цибулі, доставка після 18:00"></textarea>
+                        </div>
+
+                        <!-- Кнопка -->
+                        <div class="col-lg-4 col-12 ms-auto mt-4">
+                            <button type="submit" class="form-control btn btn-primary">Підтвердити замовлення</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="modal-footer"></div>
+            
         </div>
+    </div>
+</div>
 
         <!-- JAVASCRIPT FILES -->
         <script src="js/jquery.min.js"></script>
