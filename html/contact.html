@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>BellaPizza - Contact Page</title>
+
+        <!-- CSS FILES -->        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">                
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="../css/bootstrap-icons.css" rel="stylesheet">
+
+        <link href="../css/tooplate-crispy-kitchen.css" rel="stylesheet">
+<!--
+
+
+
+-->
+    </head>
+    
+    <body>
+        
+        <nav class="navbar navbar-expand-lg bg-white shadow-lg">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <a class="navbar-brand" href="index.html">
+                    BellaPizza
+                </a>
+
+                <div class="d-lg-none">
+                    <button type="button" class="custom-btn btn btn-danger" data-bs-toggle="modal" data-bs-target="#BookingModal">Замовлення</button>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Головна</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">Історія</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="menu.html">Меню</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="news.html">Наші новини</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="contact.html">Контакти</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="d-none d-lg-block">
+                    <button type="button" class="custom-btn btn btn-danger" data-bs-toggle="modal" data-bs-target="#BookingModal">Замовлення</button>
+                </div>
+
+            </div>
+        </nav>
+
+        <main>
+
+            <header class="site-header site-contact-header">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-10 col-12 mx-auto">
+                            <h1 class="text-white">Скажіть Привіт!</h1>
+
+                            <strong class="text-white">Ми раді зв'язатися з вами</strong>
+                        </div>
+
+                    </div>
+                </div>
+                
+                <div class="overlay"></div>
+            </header>
+
+            <section class="contact section-padding">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-12">
+                            <h2 class="mb-4">Залиште повідомлення</h2>
+                        </div>
+
+                        <div class="col-lg-6 col-12">
+                            <form class="custom-form contact-form row" action="#" method="post" role="form">
+                                <div class="col-lg-6 col-6">
+                                    <label for="contact-name" class="form-label">Повне ім'я</label>
+
+                                    <input type="text" name="contact-name" id="contact-name" class="form-control" placeholder="Ваше ім'я" required>
+                                </div>
+
+                                <div class="col-lg-6 col-6">
+                                    <label for="contact-phone" class="form-label">Номер телефону</label>
+
+                                    <input type="telephone" name="contact-phone" id="contact-phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control" placeholder="123-456-7890">
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="contact-email" class="form-label">Email</label>
+
+                                    <input type="email" name="contact-email" id="contact-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Ваш Email" required="">
+
+                                    <label for="contact-message" class="form-label">Повідомлення</label>
+
+                                    <textarea class="form-control" rows="5" id="contact-message" name="contact-message" placeholder="Ваше повідомлення"></textarea>
+                                </div>
+
+                                <div class="col-lg-5 col-12 ms-auto">
+                                    <button type="submit" class="form-control">Надіслати</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="col-lg-4 col-12 mx-auto mt-lg-5 mt-4">
+
+                            <h5>Будні дні</h5>
+
+                            <div class="d-flex mb-lg-3">
+                                <p>Понеділок - П’ятниця</p>
+
+                                <p class="ms-5">10:00 AM - 08:00 PM</p>
+                            </div>
+
+                            <h5>Вихідні дні</h5>
+
+                            <div class="d-flex">
+                                <p>Субота та Неділя</p>
+
+                                <p class="ms-5">11:00 AM - 11:00 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <h4 class="mt-5 mb-4">Київ, Україна</h4>
+
+                            <div class="google-map pt-3">
+                                <iframe src="https://www.google.com/maps/search/Office+306+Building+B09+Unit.City+Kyiv+Ukraine+04119/@50.430011,30.5060463,13z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDkyMi4wIKXMDSoASAFQAw%3D%3D" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="site-footer section-padding">
+            
+            <div class="container">
+                
+                <div class="row">
+
+                    <div class="col-12">
+                        <h4 class="text-white mb-4 me-5">BellaPizza</h4>
+                    </div>
+
+                    <div class="col-lg-4 col-md-7 col-xs-12 tooplate-mt30">
+                        <h6 class="text-white mb-lg-4 mb-3">Локація</h6>
+
+                        <p>Київ, Україна</p>
+
+                        <a href="https://surl.li/wqdcwd" class="custom-btn btn btn-dark mt-2">Маршрут</a>
+                    </div>
+
+                    <div class="col-lg-4 col-md-5 col-xs-12 tooplate-mt30">
+                        <h6 class="text-white mb-lg-4 mb-3">Години роботи</h6>
+
+                        <p class="mb-2">Понеділок - П’ятниця</p>
+
+                        <p>10:00 AM - 08:00 PM</p>
+
+                        <p>Тел: <a href="tel: 010-02-0340" class="tel-link">096 000 00 00</a></p>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-xs-12 tooplate-mt30">
+                        <h6 class="text-white mb-lg-4 mb-3">Соціальні мережі</h6>
+
+                        <ul class="social-icon">
+                            <li><a href="#" class="social-icon-link bi-facebook"></a></li>
+
+                            <li><a href="#" class="social-icon-link bi-instagram"></a></li>
+
+                            <li><a href="" target="_blank"
+                            	 class="social-icon-link bi-twitter"></a></li>
+
+                            <li><a href="#" class="social-icon-link bi-youtube"></a></li>
+                        </ul>
+                    
+                        <p class="copyright-text tooplate-mt60">Copyright © 2022 BellaPizza Co., Ltd.</p>
+                        
+                    </div>
+
+                </div><!-- row ending -->
+                
+             </div><!-- container ending -->
+             
+        </footer>
+
+        <!-- Modal -->
+<div class="modal fade" id="BookingModal" tabindex="-1" aria-labelledby="BookingModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="mb-0">Замовлення доставки</h3>
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрити"></button>
+            </div>
+
+            <div class="modal-body d-flex flex-column justify-content-center">
+                <div class="delivery">
+                    
+                    <form class="delivery-form row" role="form" action="#" method="post">
+                        <!-- Дані користувача -->
+                        <div class="col-lg-6 col-12">
+                            <label for="name" class="form-label">Повне ім'я</label>
+                            <input type="text" name="name" id="name" class="form-control" placeholder="Ваше ім'я" required>
+                        </div>
+
+                        <div class="col-lg-6 col-12">
+                            <label for="email" class="form-label">Електронна адреса</label>
+                            <input type="email" name="email" id="email" class="form-control" placeholder="your@email.com" required>
+                        </div>
+
+                        <div class="col-lg-6 col-12">
+                            <label for="phone" class="form-label">Номер телефону</label>
+                            <input type="tel" name="phone" id="phone" class="form-control" placeholder="+380 99 123 45 67" required>
+                        </div>
+
+                        <div class="col-lg-6 col-12">
+                            <label for="address" class="form-label">Адреса доставки</label>
+                            <input type="text" name="address" id="address" class="form-control" placeholder="м. Київ, вул. Хрещатик, 12" required>
+                        </div>
+
+                        <!-- Вибір страв -->
+                        <div class="col-12 mt-3">
+                            <label for="menu-items" class="form-label">Виберіть страви</label>
+                            <select multiple class="form-select" id="menu-items" name="menuItems[]">
+                                <option value="1">Маргарита — 150 грн</option>
+                                <option value="2">Пепероні — 180 грн</option>
+                                <option value="3">Кола 0.5л — 40 грн</option>
+                                <option value="4">Тірамісу — 90 грн</option>
+                            </select>
+                            <small class="text-muted">Утримуйте Ctrl (або Cmd на Mac), щоб вибрати кілька позицій</small>
+                        </div>
+
+                        <!-- Спосіб оплати -->
+                        <div class="col-lg-6 col-12 mt-3">
+                            <label for="payment" class="form-label">Спосіб оплати</label>
+                            <select class="form-select" name="payment" id="payment" required>
+                                <option value="Cash" selected>Готівка</option>
+                                <option value="Card">Карта при отриманні</option>
+                                <option value="Online">Онлайн-оплата</option>
+                            </select>
+                        </div>
+
+                        <!-- Коментар -->
+                        <div class="col-12 mt-3">
+                            <label for="comment" class="form-label">Коментар до замовлення</label>
+                            <textarea class="form-control" rows="3" id="comment" name="comment" placeholder="Наприклад: без цибулі, доставка після 18:00"></textarea>
+                        </div>
+
+                        <!-- Кнопка -->
+                        <div class="col-lg-4 col-12 ms-auto mt-4">
+                            <button type="submit" class="form-control btn btn-primary">Підтвердити замовлення</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="modal-footer"></div>
+            
+        </div>
+    </div>
+</div>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="../js/custom.js"></script>
+
+    </body>
+</html>
