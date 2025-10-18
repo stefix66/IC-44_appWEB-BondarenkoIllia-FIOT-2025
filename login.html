@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вхід | BellaPizza</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+<section class="login-section d-flex align-items-center justify-content-center">
+    <div class="login-card p-5 shadow-lg">
+        <h2 class="mb-2 text-white">Увійти в систему</h2>
+        <p class="text-muted mb-4">Вітаємо знову! Введіть ваші дані.</p>
+        
+        <form id="login-form">
+            <div class="role-switcher mb-4">
+                <input type="radio" id="role-user" name="role" value="user" checked>
+                <label for="role-user">Користувач</label>
+                
+                <input type="radio" id="role-admin" name="role" value="admin">
+                <label for="role-admin">Адміністратор</label>
+                
+                <span class="glider"></span>
+            </div>
+
+            <div class="mb-3">
+                <input type="email" id="email" class="form-control" placeholder="Email" required>
+            </div>
+
+            <div class="mb-4">
+                <input type="password" id="password" class="form-control" placeholder="Пароль" required>
+            </div>
+
+            <button type="submit" class="custom-btn w-100 mb-3">Увійти</button>
+
+            <p class="text-center text-muted mb-0">
+                Не маєте акаунту? <a href="register.html" class="fw-bold">Зареєструватись</a>
+            </p>
+        </form>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Знаходимо форму за її id
+    const loginForm = document.getElementById('login-form');
+
+    // Додаємо слухача події 'submit' (натискання на кнопку "Увійти")
+    loginForm.addEventListener('submit', function(event) {
+        // Забороняємо стандартну поведінку форми (перезавантаження сторінки)
+        event.preventDefault();
+
+        // Знаходимо значення полів
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        
+        // Знаходимо, яка роль обрана
+        const selectedRole = document.querySelector('input[name="role"]:checked').value;
+
+        // Перевіряємо, чи поля не порожні
+        if (email.trim() === '' || password.trim() === '') {
+            alert('Будь ласка, заповніть поля Email та Пароль.');
+            return; // Зупиняємо виконання, якщо поля порожні
+        }
+
+        // Головна логіка: перевіряємо, чи обрана роль "Користувач"
+        if (selectedRole === 'user') {
+            // Якщо так, виводимо повідомлення і перенаправляємо на cabinet.html
+            alert('Вхід успішний! Перенаправляємо до вашого кабінету...');
+            window.location.href = 'cabinet.html';
+        } else {
+            // Якщо обрана інша роль (Адміністратор)
+            alert('Вхід успішний! Перенаправляємо до адмін-панелі...');
+            window.location.href = 'admin.html';
+        }
+    });
+</script>
+
+</body>
+</html>
