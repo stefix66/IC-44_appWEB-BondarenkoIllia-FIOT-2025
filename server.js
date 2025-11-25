@@ -5,6 +5,8 @@ import { connectDB } from "./config/db.js";
 import usersRoutes from "./routes/users.js";
 import menuItemsRoutes from "./routes/menuitems.js"; 
 import ordersRoutes from "./routes/orders.js";
+import orderItemsRoutes from "./routes/orderitems.js";
+import promotionsRoutes from "./routes/promotions.js";
 
 
 
@@ -19,7 +21,10 @@ connectDB();
 
 app.use("/api/users", usersRoutes);
 app.use("/api/menuitems", menuItemsRoutes);
-app.use("/api/orders", ordersRoutes);  
+app.use("/api/orders", ordersRoutes);
+app.use("/api/orderitems", orderItemsRoutes);
+app.use("/api/promotions", promotionsRoutes);
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
