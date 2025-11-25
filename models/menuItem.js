@@ -1,0 +1,43 @@
+// models/menuItem.js
+import { DataTypes } from "sequelize";
+import { sequelize } from "../config/db.js";
+
+export const MenuItem = sequelize.define(
+  "MenuItem",
+  {
+    menuitemid: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    name: {
+      type: DataTypes.STRING(100),
+      allowNull: false,
+    },
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
+    category: {
+      type: DataTypes.STRING(50),
+      allowNull: true,
+    },
+    price: {
+      type: DataTypes.DECIMAL(8, 2),
+      allowNull: false,
+    },
+    imageurl: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
+    availability: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: true,
+    },
+  },
+  {
+    tableName: "menuitems", // назва таблиці в Neon
+    timestamps: false,
+  }
+);
