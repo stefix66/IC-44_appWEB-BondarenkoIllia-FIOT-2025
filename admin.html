@@ -62,7 +62,9 @@
                         <div class="tab-pane fade show active" id="menu-management">
                             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                                 <h1 class="h2">Керування меню</h1>
-                                <button class="btn custom-btn"><i class="bi bi-plus-circle me-2"></i>Додати нову страву</button>
+                                <button class="btn custom-btn" id="add-menu-btn">
+  <i class="bi bi-plus-circle me-2"></i>Додати нову страву
+</button>
                             </div>
                             <div class="table-responsive">
 <table class="table table-dark table-hover align-middle">
@@ -176,6 +178,54 @@
             <p class="text-center text-muted mb-0">&copy; 2025 BellaPizza. Всі права захищені.</p>
         </div>
     </footer>
+    <!-- Modal для додавання / редагування страви -->
+<div class="modal fade" id="menuModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-light">
+      <div class="modal-header">
+        <h5 class="modal-title" id="menuModalTitle">Нова страва</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-2">
+          <label class="form-label">Назва</label>
+          <input id="menu-name" class="form-control" type="text">
+        </div>
+        <div class="mb-2">
+          <label class="form-label">Опис</label>
+          <textarea id="menu-desc" class="form-control"></textarea>
+        </div>
+<div class="mb-2">
+  <label class="form-label">Категорія</label>
+  <select id="menu-category" class="form-select">
+    <option value="Pizza">Pizza</option>
+    <option value="Drink">Drink</option>
+    <option value="Dessert">Dessert</option>
+  </select>
+</div>
+        <div class="mb-2">
+          <label class="form-label">Ціна</label>
+          <input id="menu-price" class="form-control" type="number" step="0.01" min="0">
+        </div>
+        <div class="mb-2">
+          <label class="form-label">Посилання на зображення</label>
+          <input id="menu-imageurl" class="form-control" type="text" placeholder="images/margherita.jpg або https://...">
+        </div>
+        <div class="form-check mb-2">
+          <input class="form-check-input" type="checkbox" id="menu-availability" checked>
+          <label class="form-check-label" for="menu-availability">
+            Є в наявності
+          </label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Скасувати</button>
+        <button class="btn btn-warning" id="menu-save-btn">Зберегти</button>
+      </div>
+    </div>
+  </div>
+</div>
+
     <script src="js/admin-menu.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
