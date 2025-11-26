@@ -7,6 +7,7 @@ import menuItemsRoutes from "./routes/menuitems.js";
 import ordersRoutes from "./routes/orders.js";
 import orderItemsRoutes from "./routes/orderitems.js";
 import promotionsRoutes from "./routes/promotions.js";
+import publicOrdersRoutes from "./routes/publicOrders.js";
 
 
 
@@ -24,6 +25,7 @@ app.use("/api/menuitems", menuItemsRoutes);
 app.use("/api/orders", ordersRoutes);
 app.use("/api/orderitems", orderItemsRoutes);
 app.use("/api/promotions", promotionsRoutes);
+app.use("/api/public/orders", publicOrdersRoutes);
 
 
 const PORT = process.env.PORT || 5000;
