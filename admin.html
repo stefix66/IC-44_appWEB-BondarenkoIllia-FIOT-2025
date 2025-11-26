@@ -88,89 +88,62 @@
                             </div>
                         </div>
 
-                        <!-- Вкладка 2: Перегляд замовлень -->
-                        <div class="tab-pane fade" id="order-management">
-                             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                                <h1 class="h2">Активні замовлення</h1>
-                            </div>
-                             <div class="table-responsive">
-                                <table class="table table-dark table-hover align-middle">
-                                    <thead><tr><th>#</th><th>Клієнт</th><th>Склад</th><th>Сума</th><th>Статус</th></tr></thead>
-                                    <!-- ✨ ОНОВЛЕНО: Більше даних -->
-                                    <tbody>
-                                        <tr>
-                                            <td>7521</td><td>Олена Ковальчук</td><td>Цезар, Кола</td><td>155 грн</td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-sm status-delivery dropdown-toggle" data-bs-toggle="dropdown">Доставляється</button>
-                                                    <ul class="dropdown-menu">
-                                                        <li><a class="dropdown-item" href="#">Готується</a></li>
-                                                        <li><a class="dropdown-item" href="#">Виконано</a></li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>7520</td><td>Андрій Мельник</td><td>Пепероні</td><td>185 грн</td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-sm status-completed dropdown-toggle" data-bs-toggle="dropdown">Виконано</button>
-                                                    <ul class="dropdown-menu">
-                                                        <li><a class="dropdown-item" href="#">Готується</a></li>
-                                                        <li><a class="dropdown-item" href="#">Доставляється</a></li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>7519</td><td>Іван Петров</td><td>Маргарита х2</td><td>300 грн</td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-sm status-preparing dropdown-toggle" data-bs-toggle="dropdown">Готується</button>
-                                                    <ul class="dropdown-menu">
-                                                        <li><a class="dropdown-item" href="#">Доставляється</a></li>
-                                                        <li><a class="dropdown-item" href="#">Виконано</a></li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+<!-- Вкладка 2: Перегляд замовлень -->
+<div class="tab-pane fade" id="order-management">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Активні замовлення</h1>
+  </div>
 
-                        <!-- Вкладка 3: Акції та новини -->
-                        <div class="tab-pane fade" id="news-management">
-                            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                                <h1 class="h2">Акції та новини</h1>
-                                <button class="btn custom-btn"><i class="bi bi-plus-circle me-2"></i>Додати новину</button>
-                            </div>
-                             <div class="table-responsive">
-                                <table class="table table-dark table-hover align-middle">
-                                    <thead><tr><th>Заголовок</th><th>Дата публікації</th><th>Дії</th></tr></thead>
-                                    <!-- ✨ ОНОВЛЕНО: Більше даних -->
-                                    <tbody>
-                                        <tr>
-                                            <td>Знижка 15% на наступне замовлення!</td><td>17.10.2025</td>
-                                            <td><button class="btn btn-sm btn-outline-warning me-2"><i class="bi bi-pencil-square"></i></button><button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Нова піца місяця: "Баварська"</td><td>01.10.2025</td>
-                                            <td><button class="btn btn-sm btn-outline-warning me-2"><i class="bi bi-pencil-square"></i></button><button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Безкоштовна доставка у вихідні</td><td>15.09.2025</td>
-                                            <td><button class="btn btn-sm btn-outline-warning me-2"><i class="bi bi-pencil-square"></i></button><button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+  <div class="table-responsive">
+    <table class="table table-dark table-hover align-middle">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>ID користувача</th>
+          <th>Дата замовлення</th>
+          <th>Сума</th>
+          <th>Статус</th>
+          <th>Спосіб оплати</th>
+          <th>Адреса доставки</th>
+        </tr>
+      </thead>
 
-                    </div>
-                </main>
-            </div>
-        </div>
+      <tbody id="orders-table-body">
+       
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+ <!-- Вкладка 3: Акції та новини -->
+<div class="tab-pane fade" id="news-management">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Акції та новини</h1>
+    <button class="btn custom-btn" id="add-promo-btn">
+      <i class="bi bi-plus-circle me-2"></i>Додати акцію / новину
+    </button>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-dark table-hover align-middle">
+      <thead>
+        <tr>
+          <th>Заголовок</th>
+          <th>Опис</th>
+          <th>Період дії</th>
+          <th>Активна</th>
+          <th>Дії</th>
+        </tr>
+      </thead>
+
+      <tbody id="promotions-table-body">
+        
+      </tbody>
+    </table>
+  </div>
+</div>
+
     </main>
 
     <footer class="site-footer">
@@ -226,7 +199,56 @@
   </div>
 </div>
 
+<!-- Modal для додавання / редагування акції -->
+<div class="modal fade" id="promoModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-light">
+      <div class="modal-header">
+        <h5 class="modal-title" id="promoModalTitle">Нова акція / новина</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="mb-2">
+          <label class="form-label">Заголовок</label>
+          <input id="promo-title" class="form-control" type="text">
+        </div>
+
+        <div class="mb-2">
+          <label class="form-label">Опис</label>
+          <textarea id="promo-desc" class="form-control" rows="3"></textarea>
+        </div>
+
+        <div class="mb-2">
+          <label class="form-label">Дата початку</label>
+          <input id="promo-startdate" class="form-control" type="date">
+        </div>
+
+        <div class="mb-2">
+          <label class="form-label">Дата завершення</label>
+          <input id="promo-enddate" class="form-control" type="date">
+        </div>
+
+        <div class="form-check mb-2">
+          <input class="form-check-input" type="checkbox" id="promo-isactive" checked>
+          <label class="form-check-label" for="promo-isactive">
+            Акція активна
+          </label>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Скасувати</button>
+        <button class="btn btn-warning" id="promo-save-btn">Зберегти</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
     <script src="js/admin-menu.js"></script>
+    <script src="js/admin-orders.js"></script>
+    <script src="js/admin-promotions.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
