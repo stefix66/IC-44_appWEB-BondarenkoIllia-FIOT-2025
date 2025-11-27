@@ -8,7 +8,7 @@ export const Promotion = sequelize.define(
     promotionid: {
       type: DataTypes.INTEGER,
       primaryKey: true,
-      autoIncrement: true, // GENERATED ALWAYS AS IDENTITY
+      autoIncrement: true, 
     },
     title: {
       type: DataTypes.STRING(100),
@@ -28,7 +28,7 @@ export const Promotion = sequelize.define(
     },
     isactive: {
       type: DataTypes.BOOLEAN,
-      defaultValue: true, // DEFAULT TRUE
+      defaultValue: true, 
     },
   },
   {

@@ -12,24 +12,24 @@ export const OrderItem = sequelize.define(
     },
     orderid: {
       type: DataTypes.INTEGER,
-      allowNull: false, // FK to Orders
+      allowNull: false, 
     },
     menuitemid: {
       type: DataTypes.INTEGER,
-      allowNull: false, // FK to MenuItems
+      allowNull: false, 
     },
     quantity: {
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
-        min: 1, // CHECK (Quantity > 0)
+        min: 1, 
       },
     },
     subtotal: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
       validate: {
-        min: 0, // CHECK (Subtotal >= 0)
+        min: 0, 
       },
     },
   },

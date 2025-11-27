@@ -37,7 +37,7 @@ export const MenuItem = sequelize.define(
     },
   },
   {
-    tableName: "menuitems", // назва таблиці в Neon
+    tableName: "menuitems", 
     timestamps: false,
   }
 );

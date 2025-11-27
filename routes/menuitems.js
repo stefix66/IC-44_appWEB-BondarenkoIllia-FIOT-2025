@@ -10,10 +10,10 @@ import {
 
 const router = express.Router();
 
-router.get("/", getMenuItems);        // GET    /api/menuitems
-router.get("/:id", getMenuItemById);  // GET    /api/menuitems/:id
-router.post("/", createMenuItem);     // POST   /api/menuitems
-router.put("/:id", updateMenuItem);   // PUT    /api/menuitems/:id
-router.delete("/:id", deleteMenuItem);// DELETE /api/menuitems/:id
+router.get("/", getMenuItems);        
+router.get("/:id", getMenuItemById);  
+router.post("/", createMenuItem);     
+router.put("/:id", updateMenuItem);   
+router.delete("/:id", deleteMenuItem);
 
 export default router;
