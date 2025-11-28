@@ -1,33 +1,30 @@
 // js/order-modal.js
-
 const API_BASE_PUBLIC = "http://localhost:5000";
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".delivery-form");
   if (!form) return;
 
-  // підтягуємо список страв з бекенду
-  loadMenuFromApi();
+  console.log("order-modal.js: форма замовлення знайдена");
 
-  // обробка сабміту форми
+  loadMenuFromApi();
   form.addEventListener("submit", onOrderFormSubmit);
 });
 
-// завантажуємо страви з /api/menuitems і наповнюємо селект
 async function loadMenuFromApi() {
   const select = document.getElementById("menu-items");
   if (!select) return;
 
   try {
+    console.log("▶️ Завантажуємо меню для модалки…");
     const res = await fetch(`${API_BASE_PUBLIC}/api/menuitems`);
+    console.log("◀️ Відповідь /api/menuitems:", res.status);
 
-    if (!res.ok) {
-      throw new Error(`Server error: ${res.status}`);
-    }
+    if (!res.ok) throw new Error(`Server error: ${res.status}`);
 
     const items = await res.json();
+    console.log("Меню з сервера:", items);
 
-    // очищаємо на всяк випадок
     select.innerHTML = "";
 
     const availableItems = items.filter((item) => item.availability);
@@ -42,11 +39,8 @@ async function loadMenuFromApi() {
 
     availableItems.forEach((item) => {
       const opt = document.createElement("option");
-      opt.value = item.menuitemid; // важливо: це FK для OrderItems
-      const price =
-        typeof item.price === "string" || typeof item.price === "number"
-          ? Number(item.price).toFixed(2)
-          : item.price;
+      opt.value = item.menuitemid;
+      const price = Number(item.price).toFixed(2);
       opt.textContent = `${item.name} — ${price} грн`;
       select.appendChild(opt);
     });
@@ -60,9 +54,18 @@ async function loadMenuFromApi() {
   }
 }
 
-// відправка замовлення на бекенд
 async function onOrderFormSubmit(event) {
   event.preventDefault();
+  console.log("📝 Сабміт форми замовлення");
+
+  const token = localStorage.getItem("token");
+  console.log("Токен з localStorage:", token ? token.slice(0, 25) + "..." : null);
+
+  if (!token) {
+    alert("Щоб оформити замовлення, спочатку увійдіть у систему.");
+    window.location.href = "login.html";
+    return;
+  }
 
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
@@ -91,35 +94,46 @@ async function onOrderFormSubmit(event) {
     email,
     phone,
     address,
-    menuItems: selectedMenuItems, // масив id меню
-    payment,                      // Cash / Card / Online
+    menuItems: selectedMenuItems,
+    payment,
     comment,
   };
+
+  console.log("▶️ Надсилаємо замовлення:", body);
 
   try {
     const res = await fetch(`${API_BASE_PUBLIC}/api/public/orders`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
       body: JSON.stringify(body),
     });
 
-    if (!res.ok) {
-      throw new Error(`Server error: ${res.status}`);
+    console.log("◀️ Відповідь /api/public/orders:", res.status);
+
+    const respData = await res.json().catch(() => ({}));
+    console.log("Тіло відповіді /api/public/orders:", respData);
+
+    if (res.status === 401) {
+      alert("Сесія недійсна або завершена. Увійдіть ще раз.");
+      window.location.href = "login.html";
+      return;
     }
 
-    const data = await res.json();
+    if (!res.ok) {
+      alert(respData.message || `Помилка сервера: ${res.status}`);
+      return;
+    }
 
-    alert(`Замовлення успішно оформлено! Номер замовлення: ${data.order.orderid}`);
+    alert(`Замовлення успішно оформлено! Номер замовлення: ${respData.order.orderid}`);
 
-    // скидаємо форму
     event.target.reset();
 
-    // закриваємо модальне вікно
     const modalEl = document.getElementById("BookingModal");
     const modal = bootstrap.Modal.getInstance(modalEl);
-    if (modal) {
-      modal.hide();
-    }
+    if (modal) modal.hide();
   } catch (error) {
     console.error("Error creating order:", error);
     alert("Не вдалося оформити замовлення. Спробуйте пізніше.");

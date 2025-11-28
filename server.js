@@ -2,13 +2,16 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import { connectDB } from "./config/db.js";
+
+import "./models/associations.js";
+
 import usersRoutes from "./routes/users.js";
 import menuItemsRoutes from "./routes/menuitems.js"; 
 import ordersRoutes from "./routes/orders.js";
 import orderItemsRoutes from "./routes/orderitems.js";
 import promotionsRoutes from "./routes/promotions.js";
 import publicOrdersRoutes from "./routes/publicOrders.js";
-
+import authRoutes from "./routes/auth.js";
 
 
 
@@ -19,7 +22,7 @@ app.use(express.json());
 
 connectDB();
 
-
+app.use("/api/auth", authRoutes);
 app.use("/api/users", usersRoutes);
 app.use("/api/menuitems", menuItemsRoutes);
 app.use("/api/orders", ordersRoutes);

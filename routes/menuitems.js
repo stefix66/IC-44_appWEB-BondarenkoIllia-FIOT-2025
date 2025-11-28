@@ -8,12 +8,17 @@ import {
   deleteMenuItem,
 } from "../controllers/menuItemsController.js";
 
+import { verifyToken, requireRole } from "../middleware/auth.js";
+
 const router = express.Router();
 
-router.get("/", getMenuItems);        
-router.get("/:id", getMenuItemById);  
-router.post("/", createMenuItem);     
-router.put("/:id", updateMenuItem);   
-router.delete("/:id", deleteMenuItem);
+// Публічні
+router.get("/", getMenuItems);
+router.get("/:id", getMenuItemById);
+
+// Тільки Admin
+router.post("/", verifyToken, requireRole("Admin"), createMenuItem);
+router.put("/:id", verifyToken, requireRole("Admin"), updateMenuItem);
+router.delete("/:id", verifyToken, requireRole("Admin"), deleteMenuItem);
 
 export default router;
