@@ -64,7 +64,7 @@ localStorage.setItem("userEmail", data.user.email);
 
     alert("Вхід успішний!");
 
-    // Навмисно ставимо 'Admin' з великої літери, щоб відповідало ролі з БД
+    
     if (roles.includes("Admin")) {
       console.log("➡️ Перенаправляємо до admin.html");
       window.location.href = "admin.html";

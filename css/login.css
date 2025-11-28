@@ -97,53 +97,8 @@ body {
     color: transparent;
 }
 
-/* --- Перемикач ролей --- */
-.role-switcher {
-    display: flex;
-    position: relative;
-    background-color: #2a2a2a;
-    border-radius: 12px;
-    padding: 5px;
-    border: 1px solid #444;
-}
-
-.role-switcher input[type="radio"] {
-    display: none; 
-}
-
-.role-switcher label {
-    flex: 1; 
-    text-align: center;
-    padding: 8px;
-    cursor: pointer;
-    color: #888;
-    font-weight: 500;
-    transition: color 0.3s ease, font-size 0.3s ease;
-    z-index: 2; 
-}
 
 
-.role-switcher input[type="radio"]:checked + label {
-    color: #fff;
-}
-
-
-.glider {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    height: calc(100% - 10px);
-    width: calc(50% - 5px);
-    background-image: linear-gradient(45deg, #006eff, #001aff);
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-    z-index: 1;
-}
-
-
-#role-admin:checked ~ .glider {
-    transform: translateX(100%);
-}
 
 
 
