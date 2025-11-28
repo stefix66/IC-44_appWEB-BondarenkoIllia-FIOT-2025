@@ -7,6 +7,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
   console.log("order-modal.js: форма замовлення знайдена");
 
+  // 🔹 Автопідстановка даних авторизованого користувача
+  const nameInput = document.getElementById("name");
+  const emailInput = document.getElementById("email");
+  const phoneInput = document.getElementById("phone");
+  const addressInput = document.getElementById("address");
+
+  const savedName = localStorage.getItem("userName");
+  const savedEmail = localStorage.getItem("userEmail");
+  const savedPhone = localStorage.getItem("userPhone");
+  const savedAddress = localStorage.getItem("userAddress");
+
+  if (savedName && nameInput) {
+    nameInput.value = savedName;
+    nameInput.readOnly = true; // імʼя з профілю, не редагуємо тут
+  }
+
+  if (savedEmail && emailInput) {
+    emailInput.value = savedEmail;
+    emailInput.readOnly = true; // email теж
+  }
+
+  if (savedPhone && phoneInput) {
+    phoneInput.value = savedPhone;
+  }
+
+  if (savedAddress && addressInput) {
+    addressInput.value = savedAddress;
+  }
+
   loadMenuFromApi();
   form.addEventListener("submit", onOrderFormSubmit);
 });

@@ -58,6 +58,10 @@ async function onLoginSubmit(event) {
     localStorage.setItem("roles", JSON.stringify(roles));
     console.log("📌 Ролі користувача:", roles);
 
+    localStorage.setItem("userName", data.user.name);
+localStorage.setItem("userEmail", data.user.email);
+
+
     alert("Вхід успішний!");
 
     // Навмисно ставимо 'Admin' з великої літери, щоб відповідало ролі з БД
